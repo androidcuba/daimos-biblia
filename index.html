@@ -1,0 +1,3394 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0B1120">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>TŌSHŌ DAIMOS — Biblia Oficial de Doblaje 2026 (Edición Cuba Offline 2027)</title>
+  
+  <style>
+    :root {
+      --bg-main: #0B1120;
+      --bg-panel: #111827;
+      --bg-card: #182234;
+      --bg-input: #0f172a;
+      --text-main: #E2E8F0;
+      --text-muted: #94A3B8;
+      --border: #27354A;
+      --daimos-red: #DC2626;
+      --daimos-dark-red: #991B1B;
+      --daimos-gold: #EAB308;
+      --daimos-accent-gold: #FACC15;
+      --badge-earth-bg: #172554;
+      --badge-earth-text: #93C5FD;
+      --badge-mil-bg: #451A03;
+      --badge-mil-text: #FCD34D;
+      --badge-baam-bg: #3B0764;
+      --badge-baam-text: #D8B4FE;
+      --badge-peace-bg: #064E3B;
+      --badge-peace-text: #6EE7B7;
+      --badge-rebel-bg: #4C0519;
+      --badge-rebel-text: #FDA4AF;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+      font-size: 13px;
+    }
+
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0B1120; }
+    ::-webkit-scrollbar-thumb { background: #27354A; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--daimos-gold); }
+
+    /* Android app polish */
+    html { background: #0B1120; overscroll-behavior-y: none; }
+    body { -webkit-tap-highlight-color: transparent; overscroll-behavior-y: none; }
+    button, label { -webkit-user-select: none; user-select: none; }
+    .android-share-btn { display: none; }
+    .android-app .android-hide { display: none !important; }
+    .android-app .android-share-btn { display: inline-flex; }
+    @media (max-width: 720px) {
+      .header-inner { padding: 9px 12px; gap: 9px; }
+      .header-title { font-size: 15px !important; line-height: 1.15; }
+      .brand-meta { flex-wrap: wrap; }
+      .actions-wrap { width: 100%; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+      .actions-wrap::-webkit-scrollbar { display: none; }
+      .actions-wrap .btn { flex: 0 0 auto; min-height: 38px; }
+    }
+
+    /* Header */
+    header {
+      background-color: rgba(17, 24, 39, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(8px);
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--daimos-red), #991B1B 50%, #B45309);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 20px;
+      color: #FFF;
+      border: 1px solid rgba(250, 204, 21, 0.4);
+      box-shadow: 0 4px 12px rgba(153, 27, 27, 0.4);
+      flex-shrink: 0;
+    }
+    .brand-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: ui-monospace, monospace;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+    .badge-cuba {
+      background: rgba(127, 29, 29, 0.85);
+      color: #FCA5A5;
+      border: 1px solid rgba(185, 28, 28, 0.7);
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .header-title {
+      font-size: 17px;
+      font-weight: 800;
+      color: #F8FAFC;
+      letter-spacing: 0.5px;
+    }
+    .header-title span {
+      color: var(--daimos-gold);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* Botones de navegación */
+    .actions-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: #CBD5E1;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #243247;
+      color: #FFF;
+      border-color: #475569;
+    }
+    .btn.active {
+      background: var(--daimos-gold);
+      color: #0F172A;
+      border-color: var(--daimos-gold);
+      box-shadow: 0 2px 8px rgba(234, 179, 8, 0.35);
+    }
+    .btn-download {
+      background: linear-gradient(135deg, #065F46, #047857);
+      color: #ECFDF5;
+      border-color: #10B981;
+    }
+    .btn-download:hover {
+      background: #059669;
+      color: #FFF;
+    }
+    .btn-sync {
+      background: rgba(30, 58, 138, 0.7);
+      color: #93C5FD;
+      border-color: rgba(59, 130, 246, 0.5);
+    }
+    .btn-sync:hover {
+      background: #1E3A8A;
+      color: #FFF;
+    }
+
+    /* Banner informativo */
+    .sub-banner {
+      background: linear-gradient(90deg, #111827 0%, #0F172A 50%, #0B1120 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 16px;
+      font-size: 11px;
+      color: #CBD5E1;
+    }
+    .sub-banner-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .dot-live {
+      width: 7px;
+      height: 7px;
+      background: #10B981;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      box-shadow: 0 0 8px #10B981;
+    }
+
+    /* Panel de Créditos Técnicos */
+    .credits-panel {
+      max-width: 1360px;
+      margin: 14px auto 0 auto;
+      padding: 0 16px;
+      width: 100%;
+    }
+    .credits-box {
+      background: linear-gradient(135deg, #0e172b 0%, #131f37 100%);
+      border: 1px solid #1e3a8a;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .credit-tag {
+      font-size: 9px;
+      font-family: ui-monospace, monospace;
+      color: var(--daimos-gold);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .credit-val {
+      font-size: 12px;
+      font-weight: 700;
+      color: #FFF;
+    }
+    .credit-sub {
+      font-size: 10px;
+      color: #94A3B8;
+    }
+
+    /* Contenedor principal */
+    main {
+      flex: 1;
+      max-width: 1360px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 14px 16px 40px 16px;
+    }
+
+    /* Filtros */
+    .filter-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .search-wrap {
+      flex: 1;
+      min-width: 250px;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid #334155;
+      color: #FFF;
+      padding: 7px 10px 7px 32px;
+      border-radius: 6px;
+      font-size: 12px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-input:focus { border-color: var(--daimos-gold); }
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      color: #64748B;
+    }
+    .voice-select {
+      background: var(--bg-input);
+      border: 1px solid #334155;
+      color: #E2E8F0;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      outline: none;
+      min-width: 180px;
+    }
+    .faction-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(51, 65, 85, 0.6);
+      align-items: center;
+    }
+    .faction-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #94A3B8;
+      margin-right: 4px;
+    }
+    .faction-btn {
+      background: var(--bg-input);
+      border: 1px solid var(--border);
+      color: #94A3B8;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .faction-btn:hover { background: #1E293B; color: #FFF; }
+    .faction-btn.active {
+      background: #27354A;
+      color: #FFF;
+      border-color: #64748B;
+    }
+
+    /* Grilla de personajes */
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: #475569;
+    }
+    .card-top {
+      background: rgba(15, 23, 42, 0.8);
+      border-bottom: 1px solid var(--border);
+      padding: 6px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      font-family: ui-monospace, monospace;
+    }
+    .faction-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-earth { background: var(--badge-earth-bg); color: var(--badge-earth-text); border: 1px solid #1D4ED8; }
+    .badge-mil { background: var(--badge-mil-bg); color: var(--badge-mil-text); border: 1px solid #B45309; }
+    .badge-baam { background: var(--badge-baam-bg); color: var(--badge-baam-text); border: 1px solid #7E22CE; }
+    .badge-peace { background: var(--badge-peace-bg); color: var(--badge-peace-text); border: 1px solid #047857; }
+    .badge-rebel { background: var(--badge-rebel-bg); color: var(--badge-rebel-text); border: 1px solid #BE123C; }
+
+    .card-main {
+      padding: 12px;
+      display: flex;
+      gap: 12px;
+    }
+    .avatar-box {
+      width: 92px;
+      height: 120px;
+      background: #060B14;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .avatar-fallback {
+      position: absolute;
+      inset: 0;
+      background: #0B1120;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4px;
+    }
+    .fallback-kanji {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--daimos-gold);
+      line-height: 1;
+    }
+    .fallback-sub {
+      font-size: 8px;
+      font-family: ui-monospace, monospace;
+      color: #64748B;
+      margin-top: 4px;
+    }
+
+    .card-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .jp-name {
+      font-size: 10px;
+      font-family: ui-monospace, monospace;
+      color: var(--daimos-accent-gold);
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .dub-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: #FFF;
+      margin: 1px 0 3px 0;
+      line-height: 1.2;
+    }
+    .role-text {
+      font-size: 11px;
+      color: #CBD5E1;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .meta-line {
+      font-size: 11px;
+      font-family: ui-monospace, monospace;
+      color: #94A3B8;
+      margin-top: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .meta-line b { color: #CBD5E1; }
+    .voice-txt { color: var(--daimos-gold); font-weight: 700; }
+
+    .card-notes {
+      padding: 0 12px 10px 12px;
+    }
+    .notes-box {
+      background: #0F172A;
+      border: 1px solid #1E293B;
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 11px;
+      color: #CBD5E1;
+      line-height: 1.4;
+    }
+    .notes-box strong { color: #FFF; }
+    .prov-line {
+      font-size: 10px;
+      font-family: ui-monospace, monospace;
+      color: #64748B;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .prov-line::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      background: #10B981;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .card-foot {
+      background: #0F172A;
+      border-top: 1px solid var(--border);
+      padding: 8px 12px;
+    }
+    .btn-modal {
+      width: 100%;
+      background: #1E293B;
+      border: 1px solid #334155;
+      color: #E2E8F0;
+      padding: 6px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-modal:hover {
+      background: var(--daimos-gold);
+      color: #000;
+      border-color: var(--daimos-gold);
+    }
+
+    /* Tabla Matriz */
+    .table-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 12px;
+    }
+    thead th {
+      background: #0F172A;
+      color: #94A3B8;
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody td {
+      padding: 8px 12px;
+      border-bottom: 1px solid #1E293B;
+      vertical-align: middle;
+    }
+    tbody tr:hover { background: rgba(30, 41, 59, 0.4); }
+
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-content {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 720px;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .modal-header {
+      background: #0F172A;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-body {
+      padding: 16px;
+      overflow-y: auto;
+      font-size: 12px;
+    }
+    .modal-avatar-frame {
+      width: 110px;
+      height: 145px;
+      background: #060B14;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .modal-footer {
+      background: #0F172A;
+      border-top: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* Toast */
+    .toast-notice {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #047857;
+      color: #FFF;
+      border: 1px solid #10B981;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+      z-index: 200;
+      display: none;
+      animation: fadeIn 0.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media print {
+      body { background: #FFF !important; color: #000 !important; }
+      header, .sub-banner, .filter-card, .actions-wrap, .btn-modal, .card-foot, .modal-overlay { display: none !important; }
+      .char-grid { display: block !important; }
+      .card { page-break-inside: avoid !important; border: 1px solid #999 !important; background: #FFF !important; color: #000 !important; margin-bottom: 12px !important; }
+      .dub-name { color: #000 !important; }
+      .jp-name { color: #444 !important; }
+      .notes-box { background: #F8FAFC !important; border: 1px solid #CCC !important; color: #111 !important; }
+      .avatar-box { background: #EEE !important; border: 1px solid #CCC !important; }
+      .badge-earth, .badge-mil, .badge-baam, .badge-peace, .badge-rebel { background: #FFF !important; color: #000 !important; border: 1px solid #000 !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Superior -->
+  <header>
+    <div class="header-inner">
+      <div class="brand-wrap">
+        <div class="brand-logo">闘</div>
+        <div>
+          <div class="brand-meta">
+            <span class="badge-cuba">CUBA-2027 • OFFLINE MASTER</span>
+            <span style="color: #94A3B8;">Tōshō Daimos (1978) • 44 Capítulos</span>
+          </div>
+          <h1 class="header-title">BIBLIA OFICIAL DE DOBLAJE <span>(闘将ダイモス)</span></h1>
+        </div>
+      </div>
+
+      <div class="actions-wrap">
+        <button class="btn btn-download android-hide" onclick="downloadCurrentHtml()" title="Descargar este archivo HTML autónomo para tu memoria USB o disco">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Descargar HTML
+        </button>
+
+        <label class="btn btn-sync android-hide" title="Seleccionar fotos de tu carpeta local para incrustarlas en memoria">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+          Vincular Fotos Locales
+          <input type="file" id="local-picker" multiple="" accept="image/*,.webp,.png,.jpg,.jpeg" style="display: none;" onchange="handleFileSelect(this.files)">
+        </label>
+
+        <button class="btn active" id="tab-btn-grid" onclick="showTab('grid')">Fichas de Atril</button>
+        <button class="btn" id="tab-btn-matrix" onclick="showTab('matrix')">Matriz Seiyū</button>
+        <button class="btn" id="tab-btn-guide" onclick="showTab('guide')">Guía Fonética</button>
+        <button class="btn android-hide" onclick="window.print()">Imprimir</button>
+        <button class="btn android-share-btn" onclick="shareApp()" title="Compartir la Biblia de Doblaje">Compartir</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub-banner informativo -->
+  <div class="sub-banner">
+    <div class="sub-banner-inner">
+      <div>
+        <span class="dot-live"></span>
+        <strong style="color: var(--daimos-gold); text-transform: uppercase;">Modo Autónomo Local:</strong>
+        <span id="sync-status">Lee fotos directamente de la misma carpeta (o subcarpeta "fotos/"). No requiere HTTrack ni internet.</span>
+      </div>
+      <div style="font-family: ui-monospace, monospace; font-size: 11px; color: #94A3B8;">
+        30 Personajes Certificados • Nagahama Romance
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel de Créditos Técnicos Oficiales -->
+  <div class="credits-panel">
+    <div class="credits-box">
+      <div>
+        <div class="credit-tag">Estudio de Grabación</div>
+        <div class="credit-val">Estudio de Doblaje 14b</div>
+        <div class="credit-sub">La Habana, Cuba</div>
+      </div>
+      <div>
+        <div class="credit-tag">Dirección de Doblaje</div>
+        <div class="credit-val">Ana Nora Calaza</div>
+        <div class="credit-sub">Dirección de actores y sala</div>
+      </div>
+      <div>
+        <div class="credit-tag">Sonido, Edición &amp; Ajustes</div>
+        <div class="credit-val">Jorge Fernández</div>
+        <div class="credit-sub">Sonidista, editor y ajuste</div>
+      </div>
+      <div>
+        <div class="credit-tag">Documentación &amp; Apoyo</div>
+        <div class="credit-val">Adrián Velázquez Pupo</div>
+        <div class="credit-sub">Investigación filológica y archivo</div>
+      </div>
+      <div>
+        <div class="credit-tag">Transmisión Programada</div>
+        <div class="credit-val">Canal Habana</div>
+        <div class="credit-sub">Emisión estimada: 2027</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido Central -->
+  <main>
+    
+    <!-- VISTA 1: FICHAS (GRID) -->
+    <div id="view-grid">
+      <div class="filter-card">
+        <div class="filter-row">
+          <div class="search-wrap">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="search-input" class="search-input" placeholder="Buscar por personaje, seiyū, función dramática o tesitura..." onkeyup="filterCharacters()">
+          </div>
+
+          <select id="voice-filter" class="voice-select" onchange="filterCharacters()">
+            <option value="all">Todas las Tesituras</option>
+            <option value="Tenor">Tenores (Heroicos / Nobles)</option>
+            <option value="Barítono">Barítonos (Mordaces / Maduros)</option>
+            <option value="Bajo">Bajos (Castrenses / Cavernosos)</option>
+            <option value="Soprano">Sopranos (Líricas / Juveniles)</option>
+            <option value="Mezzo">Mezzo / Contraltos</option>
+            <option value="Carácter">Carácter / Cómicas / Infantiles</option>
+          </select>
+        </div>
+
+        <div class="faction-bar">
+          <span class="faction-title">Facción:</span>
+          <button class="faction-btn active" data-fac="all" onclick="setFaction('all', this)">Todos (<span id="count-all">30</span>)</button>
+          <button class="faction-btn" data-fac="Tierra - Daimobic" onclick="setFaction('Tierra - Daimobic', this)">🌍 Daimobic (<span id="count-daimobic">10</span>)</button>
+          <button class="faction-btn" data-fac="Tierra - Militar" onclick="setFaction('Tierra - Militar', this)">🛡️ Ejército Terrestre (<span id="count-militar">2</span>)</button>
+          <button class="faction-btn" data-fac="Baam - Militar" onclick="setFaction('Baam - Militar', this)">🦅 Mando Baam (<span id="count-baammil">4</span>)</button>
+          <button class="faction-btn" data-fac="Baam - Pacifista y Civil" onclick="setFaction('Baam - Pacifista y Civil', this)">🕊️ Facción Pacifista (<span id="count-baampac">7</span>)</button>
+          <button class="faction-btn" data-fac="Corte &amp; Disidencia" onclick="setFaction('Corte &amp; Disidencia', this)">👑 Pequeño Baam / Rebeldes (<span id="count-disidencia">7</span>)</button>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: #94A3B8; margin-bottom: 10px; font-family: ui-monospace, monospace;">
+        <div>Mostrando <span id="visible-count" style="color: var(--daimos-gold); font-weight: 700;">30</span> personajes certificados</div>
+        <div>Fidelidad filológica a Tadao Nagahama (1978)</div>
+      </div>
+
+      <div id="characters-container" class="char-grid"><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Base Daimobic</span>
+              <span style="color: #94A3B8;">Ep. 1 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Kazuya Ryūzaki.webp" alt="Kazuya Ryūzaki" class="avatar-img" data-char-id="kazuya" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 30%;" onerror="handleImageFallback(this, 'kazuya')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">一</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">竜崎 一矢 (Kazuya Ryūzaki)</div>
+                <h3 class="dub-name">Kazuya Ryūzaki</h3>
+                <div class="role-text">Piloto Titular de Daimos • Campeón de Kárate</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Akira Kamiya (神谷 明)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Tenor Heroico Juvenil</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Ataques de voz secos y directos procedentes del hara (abdomen). En combate proyecta fiereza marcial pura sin descontrolar agudos; con Erika, el tono se vuelve íntimo, roto por la tragedia y lírico.
+              </div>
+              <div class="prov-line">Settei de diseño oficial (Norio Shioyama, 1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('kazuya')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-peace">Imperio Baam • Pacifista</span>
+              <span style="color: #94A3B8;">Ep. 1 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Princesa Erika.png" alt="Princesa Erika" class="avatar-img" data-char-id="erika" data-try-idx="6" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'erika')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">愛</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">エリカ (Erika)</div>
+                <h3 class="dub-name">Princesa Erika</h3>
+                <div class="role-text">Princesa Imperial de Baam • Fundadora de la Resistencia</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Miyuki Ueda (上田みゆき)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Soprano Lírica Melancólica</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Timbre dulce y afligido pero con sólida columna de aire. No es sumisa: transmite la carga de una culpa involuntaria y una pureza sagrada dispuesta al autosacrificio.
+              </div>
+              <div class="prov-line">Celuloide original de producción Toei Animation</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('erika')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-baam">Imperio Baam • Alto Mando</span>
+              <span style="color: #94A3B8;">Ep. 1 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Richter_(Tosho_Daimos).webp" alt="Almirante Richter" class="avatar-img" data-char-id="richter" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 20%;" onerror="handleImageFallback(this, 'richter')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">怒</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">リヒテル提督 (Richter)</div>
+                <h3 class="dub-name">Almirante Richter</h3>
+                <div class="role-text">Comandante en Jefe de las Fuerzas de Ataque a la Tierra</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Osamu Ichikawa (市川 治)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Tenor Dramático Aristocrático</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Cúspide del villano romántico de Nagahama. Declamación shakespeariana, nobleza herida, dolor filial permanente. Nunca un matón vulgar: su tragedia nace del amor a su padre asesinado.
+              </div>
+              <div class="prov-line">Celuloide de producción Toei / Roman Album #16</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('richter')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Base Daimobic</span>
+              <span style="color: #94A3B8;">Ep. 1 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Kyōshirō Yūzuki.png" alt="Kyōshirō Yūzuki" class="avatar-img" data-char-id="kyoshiro" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 20%;" onerror="handleImageFallback(this, 'kyoshiro')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">剣</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">夕月 京四郎 (Kyōshirō Yūzuki)</div>
+                <h3 class="dub-name">Kyōshirō Yūzuki</h3>
+                <div class="role-text">Piloto As del Galva FX-II • Maestro Espadachín</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Kazuyuki Sogabe (曽我部和行)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Ligero / Mordaz</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Actitud relajada, irónica y callejera (estética afro-samurái). Suele citar aforismos antiguos. Cínico en la base, pero con filo mortal y templanza en combate.
+              </div>
+              <div class="prov-line">Settei de diseño oficial (Sunrise, 1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('kyoshiro')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Base Daimobic</span>
+              <span style="color: #94A3B8;">Ep. 1 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Nana Izumi.png" alt="Nana Izumi" class="avatar-img" data-char-id="nana" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'nana')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">華</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">和泉 ナナ (Nana Izumi)</div>
+                <h3 class="dub-name">Nana Izumi</h3>
+                <div class="role-text">Copiloto del Galva FX-II • Francotiradora de Élite</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Yōko Kuri (栗 葉子)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Soubrette Juvenil / Mezzosoprano Picante</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Energía viva, picante (16 años). Berrinches cómicos imitando ladridos ('¡Wan!'), pero con profundo desgarro ante el desamor y máxima frialdad con el rifle láser.
+              </div>
+              <div class="prov-line">Model Sheet Toei Dōga (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('nana')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Base Daimobic</span>
+              <span style="color: #94A3B8;">Ep. 1 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Shinichiro.webp" alt="Dr. Shin'ichirō Izumi" class="avatar-img" data-char-id="izumi" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 22%;" onerror="handleImageFallback(this, 'izumi')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">智</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">和泉 振一郎博士 (Dr. Shin'ichirō Izumi)</div>
+                <h3 class="dub-name">Dr. Shin'ichirō Izumi</h3>
+                <div class="role-text">Comandante General de la Base Daimobic • Maestro Zen</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Hisashi Katsuta (勝田 久)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Maduro Paternal (60-65 años)</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Gravedad reposada y aplomo de maestro marcial. Frente al General Miwa, su autoridad moral inapelable debe aplastar la histeria castrense.
+              </div>
+              <div class="prov-line">Celuloide de producción Nippon Sunrise</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('izumi')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Prólogo / Lunar</span>
+              <span style="color: #94A3B8;">Ep. 1 (Recurrente en Flashback)</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/isamu_ryuzaki.webp" alt="Dr. Isamu Ryūzaki" class="avatar-img" data-char-id="isamu" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'isamu')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">勇</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">竜崎 勇博士 (Dr. Isamu Ryūzaki)</div>
+                <h3 class="dub-name">Dr. Isamu Ryūzaki</h3>
+                <div class="role-text">Fundador de Daimobic • Creador de Daimos • Mártir</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Shōzō Iizuka (飯塚昭三)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Dramático Profundo</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Timbre cálido, visionario e imponente. En los recuerdos debe sonar como el testamento de la hermandad entre los pueblos.
+              </div>
+              <div class="prov-line">Settei oficial Norio Shioyama (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('isamu')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-mil">Ejército Terrestre • Mando Supremo</span>
+              <span style="color: #94A3B8;">Ep. 1 a 43</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/General_Miwa.webp" alt="General Sakamori Miwa" class="avatar-img" data-char-id="miwa" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'miwa')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">軍</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">三輪 防人長官 (General Sakamori Miwa)</div>
+                <h3 class="dub-name">General Sakamori Miwa</h3>
+                <div class="role-text">Comandante en Jefe de las Fuerzas de Defensa de la Tierra</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Tamio Ōki (大木民夫)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Bajo Estridente Castrense</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Abrasivo, fanático, chovinista. No caricaturizarlo: su peligro real estriba en que posee los cañones y la ley militar de su lado.
+              </div>
+              <div class="prov-line">Telecine 35mm Toei / Emisión AT-X</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('miwa')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-baam">Imperio Baam • Ejército Expedicionario</span>
+              <span style="color: #94A3B8;">Ep. 1 a 35</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/balbas1.jpg" alt="General Balbas" class="avatar-img" data-char-id="balbas" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 22%;" onerror="handleImageFallback(this, 'balbas')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">武</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">猛将バルバス (Barubasu)</div>
+                <h3 class="dub-name">General Balbas</h3>
+                <div class="role-text">Comandante Táctico • Vasallo de Honor de Richter</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Shōzō Iizuka (飯塚昭三)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Bajo Profundo Cavernoso y Marcial</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Rocoso, imponente, con honor espartano impenetrable. Sus lamentos ante las bajezas de Olban deben conmover.
+              </div>
+              <div class="prov-line">Celuloide original Toei Dōga (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('balbas')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-baam">Imperio Baam • Estado Mayor</span>
+              <span style="color: #94A3B8;">Ep. 1 a 42</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Shockedraiza.webp" alt="Marquesa Raiza" class="avatar-img" data-char-id="raiza" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'raiza')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">妖</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">ライザ (Raiza)</div>
+                <h3 class="dub-name">Marquesa Raiza</h3>
+                <div class="role-text">Científica Diseñadora de Mecha-Bestias de Baam</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Kazuko Yanaga (弥永和子)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Mezzosoprano Dramática Sensual y Fría</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Sofisticada, gélida, calculadora. Mezcla intelecto científico despiadado con amor obsesivo hacia Richter.
+              </div>
+              <div class="prov-line">Settei de vestuario Norio Shioyama (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('raiza')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-rebel">Pequeño Baam • Regente Usurpador</span>
+              <span style="color: #94A3B8;">Ep. 1, 5, 34 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Gran Mariscal Olban.webp" alt="Gran Mariscal Olban" class="avatar-img" data-char-id="olban" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 16%;" onerror="handleImageFallback(this, 'olban')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">覇</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">オルバン大元帥 (Emperor Olban)</div>
+                <h3 class="dub-name">Gran Mariscal Olban</h3>
+                <div class="role-text">Soberano Usurpador de Pequeño Baam • Conspirador</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Hisashi Katsuta (勝田 久)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Bajo Maquiavélico Teatral y Autoritario</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Untuoso y viscoso. Modula de la falsa piedad paternal a la furia sanguinaria. Risa sardónica helada.
+              </div>
+              <div class="prov-line">Model Sheet oficial Toei Dōga</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('olban')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-peace">Imperio Baam • Trono Legítimo</span>
+              <span style="color: #94A3B8;">Ep. 1 (Flashbacks en Ep. 5 y 17)</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Leon_daimos.webp" alt="Gran Mariscal Leon" class="avatar-img" data-char-id="leon" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 22%;" onerror="handleImageFallback(this, 'leon')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">王</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">リオン大元帥 (Emperor Leon)</div>
+                <h3 class="dub-name">Gran Mariscal Leon</h3>
+                <div class="role-text">Soberano Supremo Original de Baam • Padre de Richter y Erika</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Tamio Ōki (大木民夫)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Bajo Noble Venerable y Conciliador</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Majestuoso y cargado con el cansancio del éxodo estelar. Su agonía pidiendo paz debe conmover el estudio.
+              </div>
+              <div class="prov-line">Celuloide oficial Toei Dōga (Episodio 1)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('leon')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Base Daimobic</span>
+              <span style="color: #94A3B8;">Ep. 1 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/okane_from_daimos.webp" alt="Doña Okane" class="avatar-img" data-char-id="okane" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'okane')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">母</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">おかねさん (Okane-san)</div>
+                <h3 class="dub-name">Doña Okane</h3>
+                <div class="role-text">Ama de Llaves y Matriarca Doméstica de Daimobic</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Miyoko Asō (麻生美代子)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Contralto Madura de Carácter Cómico</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Fuerza vocal rústica y cómico-popular (ataques con sartenes) que transita a una ternura maternal conmovedora.
+              </div>
+              <div class="prov-line">Celuloide original Nippon Sunrise (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('okane')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Base Daimobic</span>
+              <span style="color: #94A3B8;">Ep. 12 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/genta.webp" alt="Genta" class="avatar-img" data-char-id="genta" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 24%;" onerror="handleImageFallback(this, 'genta')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">童</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">元太 (Genta)</div>
+                <h3 class="dub-name">Genta</h3>
+                <div class="role-text">Aprendiz Travieso • Mascota Infantil de la Base</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Masako Nozawa (野沢雅子)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Voz Infantil Masculina Enérgica</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Descarado, espontáneo, callejero. Sin amaneramientos: un pilluelo que adora el kárate pero sufre el impacto de la guerra.
+              </div>
+              <div class="prov-line">Model Sheet de expresiones Sunrise (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('genta')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Soporte Mecánico</span>
+              <span style="color: #94A3B8;">Ep. 1 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/CairoProfile.webp" alt="Cairo" class="avatar-img" data-char-id="cairo" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 20%;" onerror="handleImageFallback(this, 'cairo')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">機</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">カイロ (Kairo)</div>
+                <h3 class="dub-name">Cairo</h3>
+                <div class="role-text">Robot Auxiliar de Operaciones y Alerta Temprana</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Yō Inoue (井上 瑤)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Voz Aguda Metálica Característica / Cómica</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Tono quejumbroso y cantarín con modulación electrónica ligera en sala. Interpretación de base muy orgánica.
+              </div>
+              <div class="prov-line">Cel de producción Toei Dōga (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('cairo')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-peace">Imperio Baam • Corte Real</span>
+              <span style="color: #94A3B8;">Ep. 1 a 16</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Margaret_2.webp" alt="Margarete" class="avatar-img" data-char-id="margarete" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'margarete')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">守</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">マルガレーテ (Margarete)</div>
+                <h3 class="dub-name">Margarete</h3>
+                <div class="role-text">Nodriza Real de la Dinastía Leon • Confidente de Erika</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Miyoko Asō (麻生美代子)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Contralto Solemne y Protectora</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Timbre señorial, lleno de sabiduría antigua y abnegación. Es la única persona capaz de encarar a Richter con la autoridad de una madre para frenar sus accesos de cólera. Su martirio requiere una entereza desgarradora.
+              </div>
+              <div class="prov-line">Celuloide de producción Toei Video / Master broadcast</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('margarete')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-baam">Imperio Baam • Élite Científica</span>
+              <span style="color: #94A3B8;">Ep. 26 a 28</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Aizam.webp" alt="Dr. Aizam" class="avatar-img" data-char-id="aizam" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'aizam')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">鋼</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">アイザム (Aizam)</div>
+                <h3 class="dub-name">Dr. Aizam</h3>
+                <div class="role-text">Científico Supremo • Creador del Metal Hiperelástico</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Makio Inoue (井上真樹夫)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Melancólico Aristocrático</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Elegancia terminal y decadente. Oculta una dolencia fatal mientras agota sus fuerzas creando armas para Richter.
+              </div>
+              <div class="prov-line">Celuloide original Toei Animation / Tokuma Roman Album #16</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('aizam')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-peace">Imperio Baam • Honor de Armas</span>
+              <span style="color: #94A3B8;">Ep. 9 y 17</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Gurneyhalleck2a.webp" alt="Gurney Halleck" class="avatar-img" data-char-id="halleck" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'halleck')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">義</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">ガーニィ・ハレック (Gurney Halleck)</div>
+                <h3 class="dub-name">Gurney Halleck</h3>
+                <div class="role-text">Maestro de Armas • Campeón del Duelo Singular</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Hiroya Ishimaru (石丸博也)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Tenor / Barítono Marcial Noble</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Voz limpia, viril y caballeresca. Al batirse contra Kazuya debe palparse hermandad y respeto entre deportistas.
+              </div>
+              <div class="prov-line">Cel oficial Toei Dōga (Ep. 9 y 17)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('halleck')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-rebel">Pequeño Baam • Policía Secreta</span>
+              <span style="color: #94A3B8;">Ep. 1, 5, 34 a 42</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/guerroyer1.jpg" alt="Ministro Georiya" class="avatar-img" data-char-id="georiya" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'georiya')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">狡</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">ゲロイヤー (Georiya)</div>
+                <h3 class="dub-name">Ministro Georiya</h3>
+                <div class="role-text">Jefe de Seguridad Imperial • Brazo Ejecutor del Regicidio</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Kazuya Tatekabe (たてかべ和也)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Bajo Rastrero y Viscoso</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Servil con el poder, sádico con los indefensos y cobarde al verse acorralado. Su ajusticiamiento debe sonar patético.
+              </div>
+              <div class="prov-line">Celuloide original Nippon Sunrise (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('georiya')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-peace">Imperio Baam • Servidumbre de Paz</span>
+              <span style="color: #94A3B8;">Ep. 13 a 16</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Cindywings.webp" alt="Cindy" class="avatar-img" data-char-id="cindy" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'cindy')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">情</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">シンディ (Cindy)</div>
+                <h3 class="dub-name">Cindy</h3>
+                <div class="role-text">Doncella Personal y Amiga Íntima de Erika</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Eiko Masuyama (増山江威子)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Soprano Juvenil Dulce y Valerosa</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Voz aterciopelada y tímida. Vence el terror visceral a la guerra por devoción pura a Erika.
+              </div>
+              <div class="prov-line">Master telecine Toei Dōga (Ep. 13-16)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('cindy')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-rebel">Pequeño Baam • Resistencia</span>
+              <span style="color: #94A3B8;">Ep. 19</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/melvi_daimos.webp" alt="Príncipe Melubi" class="avatar-img" data-char-id="melubi" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'melubi')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">忍</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">メルビィ (Prince Melubi)</div>
+                <h3 class="dub-name">Príncipe Melubi</h3>
+                <div class="role-text">Príncipe Imperial • Conspirador Clave Pro-Paz</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Masatō Ibu (伊武雅刀)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Dúctil (Bufón Ebrio / Líder Lúcido)</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> El 'Hamlet' de Baam. En público finge ser un noble decadente y borracho; en secreto su voz es afilada, culta y decidida.
+              </div>
+              <div class="prov-line">Model Sheet Toei Dōga (Episodio 19)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('melubi')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-peace">Imperio Baam • Cuerpo Médico</span>
+              <span style="color: #94A3B8;">Ep. 9, 14, 16</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Doctor Uoorin (Walin).jpg" alt="Doctor Uoorin (Walin)" class="avatar-img" data-char-id="uoorin" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'uoorin')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">医</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">ウォーリン (Dr. Uoorin / Walin)</div>
+                <h3 class="dub-name">Doctor Uoorin (Walin)</h3>
+                <div class="role-text">Jefe Médico del Castillo Submarino • Humanitario</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Mikio Terashima (寺島幹夫)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Maduro Sereno y Compasivo</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Timbre clínico, ético y reposado. Encarna el juramento hipocrático atendiendo a heridos sin importar su bando.
+              </div>
+              <div class="prov-line">Master broadcast Nippon Sunrise</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('uoorin')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-rebel">Pequeño Baam • Jerarquía Espiritual</span>
+              <span style="color: #94A3B8;">Ep. 42 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Gran Sacerdote Yahoba.jpg" alt="Gran Sacerdote Yahoba" class="avatar-img" data-char-id="yahoba" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'yahoba')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">聖</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">ヤホバ (Archbishop Yahoba)</div>
+                <h3 class="dub-name">Gran Sacerdote Yahoba</h3>
+                <div class="role-text">Gran Patriarca Religioso de la Fe de Baam</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Yuzuru Fujimoto (藤本 譲)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Bajo Solemne Litúrgico Resonante</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Cadencia litúrgica, lenta y venerable. Su fingida sumisión a Olban oculta la furia santa de quien ve su templo profanado.
+              </div>
+              <div class="prov-line">Celuloide original Toei Animation (Ep. 42-44)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('yahoba')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-rebel">Pequeño Baam • Rebelión Militar</span>
+              <span style="color: #94A3B8;">Ep. 34</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="" alt="Comandante Himure (Himre)" class="avatar-img" data-char-id="himure" data-try-idx="18" referrerpolicy="no-referrer" style="object-position: center 15%; display: none;" onerror="handleImageFallback(this, 'himure')">
+                <div class="avatar-fallback" style="display: flex;">
+                  <span class="fallback-kanji">伝</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">ヒムレー (Himure)</div>
+                <h3 class="dub-name">Comandante Himure (Himre)</h3>
+                <div class="role-text">Oficial Subversivo • Portador de la Evidencia del Regicidio</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Ryūsei Nakao (中尾隆聖)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Tenor Marcial Desesperado y Apasionado</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Intensidad jadeante y urgente. Transmite la angustia de quien huye por el espacio con el documento que salvará a su hermano.
+              </div>
+              <div class="prov-line">Master telecine Toei Video (Episodio 34)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('himure')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-peace">Imperio Baam • Misión Utopía</span>
+              <span style="color: #94A3B8;">Ep. 20 a 31</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="" alt="Gobernador Barandook" class="avatar-img" data-char-id="barandook" data-try-idx="12" referrerpolicy="no-referrer" style="object-position: center 15%; display: none;" onerror="handleImageFallback(this, 'barandook')">
+                <div class="avatar-fallback" style="display: flex;">
+                  <span class="fallback-kanji">和</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">バランドーク (Barandook)</div>
+                <h3 class="dub-name">Gobernador Barandook</h3>
+                <div class="role-text">Comandante del Contingente Colonizador de Convivencia Pacífica</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Mahito Tsujimura (辻村真人)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Maduro Diplomático y Conciliador</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Tono reflexivo y noble. Contrasta frontalmente con la histeria belicista de Richter y Miwa.
+              </div>
+              <div class="prov-line">Settei episódico Toei Dōga (Ep. 20)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('barandook')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Científico Internacional</span>
+              <span style="color: #94A3B8;">Ep. 20, 27</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/douglasbanks.webp" alt="Dr. Douglas Banks" class="avatar-img" data-char-id="banks" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'banks')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">探</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">ダグラス・バンクス博士 (Dr. Douglas Banks)</div>
+                <h3 class="dub-name">Dr. Douglas Banks</h3>
+                <div class="role-text">Director del Instituto Científico de Nueva Zelanda</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Shōzō Iizuka (飯塚昭三)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Académico Apacible y Fuerte</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Humanista, reposado. Demuestra que no todos los humanos comparten la xenofobia del General Miwa.
+              </div>
+              <div class="prov-line">Celuloide original Nippon Sunrise (Ep. 20 y 27)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('banks')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-mil">Ejército Terrestre • Fuerzas Especiales</span>
+              <span style="color: #94A3B8;">Ep. 1, 23, 40 a 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Capitán Kitō.jpg" alt="Capitán Kitō" class="avatar-img" data-char-id="kito" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 15%;" onerror="handleImageFallback(this, 'kito')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">鬼</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">鬼頭隊長 (Captain Kitō)</div>
+                <h3 class="dub-name">Capitán Kitō</h3>
+                <div class="role-text">Comandante de Operaciones de Asalto • Oficial de Campo</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Tesshō Genda (玄田哲章)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Bajo-Barítono Rudo Curtido en Trinchera</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Voz áspera de soldado curtido. Pasa del odio homicida al despertar ético que le impide acatar órdenes de masacre.
+              </div>
+              <div class="prov-line">Master televisivo Toei Dōga (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('kito')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-rebel">Pequeño Baam • Subsuelo Popular</span>
+              <span style="color: #94A3B8;">Ep. 38, 43, 44</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Kaiya.jpg" alt="Kaiya" class="avatar-img" data-char-id="kaiya" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 20%;" onerror="handleImageFallback(this, 'kaiya')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">民</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">カイヤ (Kaiya)</div>
+                <h3 class="dub-name">Kaiya</h3>
+                <div class="role-text">Portavoz de los Trabajadores y Esclavos de Pequeño Baam</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Minori Matsushima (松島みのり)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Mezzosoprano / Contralto Curtida y Rebelde</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Voz de mujer obrera, apasionada, enérgica y castigada por la escasez. Agitación popular genuina.
+              </div>
+              <div class="prov-line">Settei secundarios Toei Animation (1978)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('kaiya')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-earth">Tierra • Comunicaciones Daimobic</span>
+              <span style="color: #94A3B8;">Ep. 2, 7, 22</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/reiko_daimos.webp" alt="Reiko" class="avatar-img" data-char-id="reiko" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 18%;" onerror="handleImageFallback(this, 'reiko')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">麗</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">レイコ (Reiko)</div>
+                <h3 class="dub-name">Reiko</h3>
+                <div class="role-text">Operadora Central de Telemetría • Amor de Kyōshirō</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Kazuko Sugiyama (杉山佳寿子)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Soprano Ligera Dulce y Profesional</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Dicción castrense limpia en combate; modulación coqueta y cálida en sus interacciones con Kyōshirō.
+              </div>
+              <div class="prov-line">Master televisivo Toei Dōga (Ep. 22)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('reiko')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div><div class="card">
+          <div>
+            <div class="card-top">
+              <span class="faction-badge badge-rebel">Pequeño Baam • Policía Política</span>
+              <span style="color: #94A3B8;">Ep. 35, 38</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="fotos/Comandante Zauro.jpg" alt="Comandante Zauro" class="avatar-img" data-char-id="zauro" data-try-idx="0" referrerpolicy="no-referrer" style="object-position: center 15%;" onerror="handleImageFallback(this, 'zauro')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">刑</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">ザウロ (Zauro)</div>
+                <h3 class="dub-name">Comandante Zauro</h3>
+                <div class="role-text">Jefe de Ejecuciones y Purga Política de Olban y Georiya</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>Yoshito Miyamura (宮村義人)</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">Barítono Monótono Seco y Despiadado</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> Voz burocrática del terror de estado. Frialdad implacable desprovista de cualquier empatía.
+              </div>
+              <div class="prov-line">Celuloide original Nippon Sunrise (Ep. 35 y 38)</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('zauro')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        </div></div>
+    </div>
+
+    <!-- VISTA 2: MATRIZ SEIYŪ -->
+    <div id="view-matrix" style="display: none;">
+      <div class="table-card">
+        <table>
+          <thead>
+            <tr>
+              <th>Personaje (Doblaje 2026/2027)</th>
+              <th>Japonés (Kanji / Rōmaji)</th>
+              <th>Bando &amp; Rango</th>
+              <th>Seiyū (1978)</th>
+              <th>Tesitura Vocal</th>
+              <th>Función Dramática Nuclear</th>
+              <th style="text-align: center;">Ficha</th>
+            </tr>
+          </thead>
+          <tbody id="matrix-tbody"><tr>
+          <td style="font-weight: 700; color: #FFF;">Kazuya Ryūzaki</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">竜崎 一矢 (Kazuya Ryūzaki)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Base Daimobic</span></td>
+          <td style="color: #E2E8F0;">Akira Kamiya (神谷 明)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Tenor Heroico Juvenil</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Arquetipo de Romeo cósmico. Comienza consumido por el deseo de vengar a su padre, pero su amor por Erika derrumba sus prejuicios contra los Baamianos, convirtiéndose en el apóstol de la coexistencia pacífica.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('kazuya')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Princesa Erika</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">エリカ (Erika)</td>
+          <td><span class="faction-badge badge-peace">Imperio Baam • Pacifista</span></td>
+          <td style="color: #E2E8F0;">Miyuki Ueda (上田みゆき)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Soprano Lírica Melancólica</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Arquetipo de Julieta galáctica. Sobrevive a la amnesia, renuncia a sus privilegios cortesanos y funda el cuerpo médico de socorro sin distinción de especie.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('erika')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Almirante Richter</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">リヒテル提督 (Richter)</td>
+          <td><span class="faction-badge badge-baam">Imperio Baam • Alto Mando</span></td>
+          <td style="color: #E2E8F0;">Osamu Ichikawa (市川 治)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Tenor Dramático Aristocrático</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Arquetipo de Teobaldo trágico. Cree que los terrestres envenenaron a Leon. Su venganza lo autodestruye hasta redimirse al descubrir el complot de Olban.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('richter')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Kyōshirō Yūzuki</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">夕月 京四郎 (Kyōshirō Yūzuki)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Base Daimobic</span></td>
+          <td style="color: #E2E8F0;">Kazuyuki Sogabe (曽我部和行)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Ligero / Mordaz</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">El 'Mercucio' del relato. Polo a tierra de Kazuya cuando este pierde el control por el amor.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('kyoshiro')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Nana Izumi</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">和泉 ナナ (Nana Izumi)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Base Daimobic</span></td>
+          <td style="color: #E2E8F0;">Yōko Kuri (栗 葉子)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Soubrette Juvenil / Mezzosoprano Picante</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Pasa de los celos infantiles a una madurez abnegada, sacrificando sus sentimientos por la felicidad de Kazuya.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('nana')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Dr. Shin'ichirō Izumi</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">和泉 振一郎博士 (Dr. Shin'ichirō Izumi)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Base Daimobic</span></td>
+          <td style="color: #E2E8F0;">Hisashi Katsuta (勝田 久)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Maduro Paternal (60-65 años)</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Baluarte ético del bando terrestre. Mantiene la autonomía de Daimobic como bastión de defensa de la paz.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('izumi')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Dr. Isamu Ryūzaki</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">竜崎 勇博士 (Dr. Isamu Ryūzaki)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Prólogo / Lunar</span></td>
+          <td style="color: #E2E8F0;">Shōzō Iizuka (飯塚昭三)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Dramático Profundo</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Abre los brazos a los refugiados de Baam y es acribillado en la cumbre diplomática por la conjura de Olban.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('isamu')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">General Sakamori Miwa</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">三輪 防人長官 (General Sakamori Miwa)</td>
+          <td><span class="faction-badge badge-mil">Ejército Terrestre • Mando Supremo</span></td>
+          <td style="color: #E2E8F0;">Tamio Ōki (大木民夫)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Bajo Estridente Castrense</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Alegoría del fascismo militar humano. Comete crímenes de guerra y demuestra que el mal no es monopolio del invasor.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('miwa')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">General Balbas</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">猛将バルバス (Barubasu)</td>
+          <td><span class="faction-badge badge-baam">Imperio Baam • Ejército Expedicionario</span></td>
+          <td style="color: #E2E8F0;">Shōzō Iizuka (飯塚昭三)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Bajo Profundo Cavernoso y Marcial</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Evoluciona del choque frontal al martirio marcial: se inmola en el Ep. 35 para permitir que Kazuya suba al Daimos y salve a Baam.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('balbas')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Marquesa Raiza</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">ライザ (Raiza)</td>
+          <td><span class="faction-badge badge-baam">Imperio Baam • Estado Mayor</span></td>
+          <td style="color: #E2E8F0;">Kazuko Yanaga (弥永和子)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Mezzosoprano Dramática Sensual y Fría</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Lady Macbeth mecha. Justifica cualquier atrocidad por Richter hasta rebelarse contra Olban y ser ejecutada.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('raiza')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Gran Mariscal Olban</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">オルバン大元帥 (Emperor Olban)</td>
+          <td><span class="faction-badge badge-rebel">Pequeño Baam • Regente Usurpador</span></td>
+          <td style="color: #E2E8F0;">Hisashi Katsuta (勝田 久)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Bajo Maquiavélico Teatral y Autoritario</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">El verdadero culpable: mandó a envenenar la copa de Leon para culpar a la Tierra y adueñarse de los mil millones de refugiados.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('olban')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Gran Mariscal Leon</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">リオン大元帥 (Emperor Leon)</td>
+          <td><span class="faction-badge badge-peace">Imperio Baam • Trono Legítimo</span></td>
+          <td style="color: #E2E8F0;">Tamio Ōki (大木民夫)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Bajo Noble Venerable y Conciliador</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">El rey mártir. Guió a su pueblo pacífico al sistema solar solo para ser envenenado a traición en la mesa de negociaciones.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('leon')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Doña Okane</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">おかねさん (Okane-san)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Base Daimobic</span></td>
+          <td style="color: #E2E8F0;">Miyoko Asō (麻生美代子)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Contralto Madura de Carácter Cómico</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Corazón civil de la fortaleza militar. Preserva la calidez del hogar en medio de la devastación planetaria.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('okane')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Genta</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">元太 (Genta)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Base Daimobic</span></td>
+          <td style="color: #E2E8F0;">Masako Nozawa (野沢雅子)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Voz Infantil Masculina Enérgica</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Aporta la perspectiva infantil inocente dentro del conflicto de supervivencia biológica.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('genta')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Cairo</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">カイロ (Kairo)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Soporte Mecánico</span></td>
+          <td style="color: #E2E8F0;">Yō Inoue (井上 瑤)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Voz Aguda Metálica Característica / Cómica</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Alivio cómico cibernético y operador del radar central de combate de la Base Daimobic.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('cairo')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Margarete</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">マルガレーテ (Margarete)</td>
+          <td><span class="faction-badge badge-peace">Imperio Baam • Corte Real</span></td>
+          <td style="color: #E2E8F0;">Miyoko Asō (麻生美代子)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Contralto Solemne y Protectora</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Protege el secreto del amor entre Erika y Kazuya por considerarlo el único puente hacia la paz. En el episodio 16 entrega heroicamente su vida interponiéndose ante el fuego enemigo para que Erika escape a la superficie.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('margarete')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Dr. Aizam</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">アイザム (Aizam)</td>
+          <td><span class="faction-badge badge-baam">Imperio Baam • Élite Científica</span></td>
+          <td style="color: #E2E8F0;">Makio Inoue (井上真樹夫)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Melancólico Aristocrático</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Eje de la célebre 'Trilogía de Aizam' (Ep. 26-28), forzando a Daimos al límite y muriendo en brazos de su amigo.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('aizam')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Gurney Halleck</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">ガーニィ・ハレック (Gurney Halleck)</td>
+          <td><span class="faction-badge badge-peace">Imperio Baam • Honor de Armas</span></td>
+          <td style="color: #E2E8F0;">Hiroya Ishimaru (石丸博也)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Tenor / Barítono Marcial Noble</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Defiende a Kazuya al notar la traición de Raiza, rescata a Erika y es asesinado vilmente en un hospital bajo el odio de Miwa.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('halleck')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Ministro Georiya</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">ゲロイヤー (Georiya)</td>
+          <td><span class="faction-badge badge-rebel">Pequeño Baam • Policía Secreta</span></td>
+          <td style="color: #E2E8F0;">Kazuya Tatekabe (たてかべ和也)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Bajo Rastrero y Viscoso</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Vertió el veneno en la copa de Leon. Es decapitado por la espada de Richter cuando este descubre la farsa.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('georiya')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Cindy</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">シンディ (Cindy)</td>
+          <td><span class="faction-badge badge-peace">Imperio Baam • Servidumbre de Paz</span></td>
+          <td style="color: #E2E8F0;">Eiko Masuyama (増山江威子)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Soprano Juvenil Dulce y Valerosa</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Se inmola con Margarete en el Ep. 16 atrayendo las balas de los centinelas para salvar a Erika.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('cindy')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Príncipe Melubi</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">メルビィ (Prince Melubi)</td>
+          <td><span class="faction-badge badge-rebel">Pequeño Baam • Resistencia</span></td>
+          <td style="color: #E2E8F0;">Masatō Ibu (伊武雅刀)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Dúctil (Bufón Ebrio / Líder Lúcido)</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Finge estupidez para eludir a la policía de Olban mientras abre rutas de fuga a prisioneros y disidentes.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('melubi')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Doctor Uoorin (Walin)</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">ウォーリン (Dr. Uoorin / Walin)</td>
+          <td><span class="faction-badge badge-peace">Imperio Baam • Cuerpo Médico</span></td>
+          <td style="color: #E2E8F0;">Mikio Terashima (寺島幹夫)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Maduro Sereno y Compasivo</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Se niega a delatar a los fugitivos y opera a Erika y Halleck bajo la amenaza de la policía secreta.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('uoorin')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Gran Sacerdote Yahoba</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">ヤホバ (Archbishop Yahoba)</td>
+          <td><span class="faction-badge badge-rebel">Pequeño Baam • Jerarquía Espiritual</span></td>
+          <td style="color: #E2E8F0;">Yuzuru Fujimoto (藤本 譲)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Bajo Solemne Litúrgico Resonante</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Acepta casar a Olban con Erika para ocultar espadas, liberar a Richter de mazmorras e introducirlo al altar nupcial.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('yahoba')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Comandante Himure (Himre)</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">ヒムレー (Himure)</td>
+          <td><span class="faction-badge badge-rebel">Pequeño Baam • Rebelión Militar</span></td>
+          <td style="color: #E2E8F0;">Ryūsei Nakao (中尾隆聖)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Tenor Marcial Desesperado y Apasionado</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Roba los archivos de la orden del envenenamiento firmada por Olban y huye a la Tierra antes de ser derribado en el Ep. 34.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('himure')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Gobernador Barandook</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">バランドーク (Barandook)</td>
+          <td><span class="faction-badge badge-peace">Imperio Baam • Misión Utopía</span></td>
+          <td style="color: #E2E8F0;">Mahito Tsujimura (辻村真人)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Maduro Diplomático y Conciliador</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Funda en Nueva Zelanda un santuario sin armas, probando la viabilidad de la coexistencia pacífica.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('barandook')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Dr. Douglas Banks</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">ダグラス・バンクス博士 (Dr. Douglas Banks)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Científico Internacional</span></td>
+          <td style="color: #E2E8F0;">Shōzō Iizuka (飯塚昭三)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Académico Apacible y Fuerte</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Descifra los blindajes de energía de Baam y transfiere la tecnología a Daimos para repeler las mecha-bestias.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('banks')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Capitán Kitō</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">鬼頭隊長 (Captain Kitō)</td>
+          <td><span class="faction-badge badge-mil">Ejército Terrestre • Fuerzas Especiales</span></td>
+          <td style="color: #E2E8F0;">Tesshō Genda (玄田哲章)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Bajo-Barítono Rudo Curtido en Trinchera</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Evolución moral capital: se rebela contra Miwa en Pequeño Baam y defiende a los refugiados alienígenas desarmados.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('kito')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Kaiya</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">カイヤ (Kaiya)</td>
+          <td><span class="faction-badge badge-rebel">Pequeño Baam • Subsuelo Popular</span></td>
+          <td style="color: #E2E8F0;">Minori Matsushima (松島みのり)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Mezzosoprano / Contralto Curtida y Rebelde</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Coordina el levantamiento civil que asalta las puertas del palacio imperial cuando Daimos penetra en la colonia.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('kaiya')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Reiko</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">レイコ (Reiko)</td>
+          <td><span class="faction-badge badge-earth">Tierra • Comunicaciones Daimobic</span></td>
+          <td style="color: #E2E8F0;">Kazuko Sugiyama (杉山佳寿子)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Soprano Ligera Dulce y Profesional</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Aporta humanidad y ligereza romántica al entorno castrense de la base, desarmando la coraza cínica del espadachín.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('reiko')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr><tr>
+          <td style="font-weight: 700; color: #FFF;">Comandante Zauro</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">ザウロ (Zauro)</td>
+          <td><span class="faction-badge badge-rebel">Pequeño Baam • Policía Política</span></td>
+          <td style="color: #E2E8F0;">Yoshito Miyamura (宮村義人)</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">Barítono Monótono Seco y Despiadado</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Encarna el aparato policíaco que aterroriza a los colonos hasta la caída final del régimen.</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('zauro')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </button>
+          </td>
+        </tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VISTA 3: GUÍA FONÉTICA Y EMPAQUETADO -->
+    <div id="view-guide" style="display: none;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+        <div class="filter-card">
+          <h2 style="font-size: 14px; font-weight: 800; color: var(--daimos-gold); margin-bottom: 10px;">Directrices de Dirección Artística — Producción 2026 / 2027</h2>
+          <p style="font-size: 12px; color: #CBD5E1; margin-bottom: 8px;"><strong>1. Tragedia Shakespeariana:</strong> Tōshō Daimos es una adaptación de <em>Romeo y Julieta</em> al mecha bélico. Se debe evitar cualquier tono paródico o plano.</p>
+          <p style="font-size: 12px; color: #CBD5E1; margin-bottom: 8px;"><strong>2. Kiai Diafragmático:</strong> El kárate tradicional de Kazuya se emite desde el abdomen (hara) con ataques de pecho secos y firmes.</p>
+          <p style="font-size: 12px; color: #CBD5E1;"><strong>3. Contraste de Bandos:</strong> Base Daimobic (marcial/familiar), Imperio Baam (aristocrático/doliente) y Mando de Miwa (fanático/chovinista).</p>
+        </div>
+
+        <div class="filter-card">
+          <h2 style="font-size: 14px; font-weight: 800; color: #10B981; margin-bottom: 10px;">Estructura Portátil para Memoria USB (Sin HTTrack)</h2>
+          <p style="font-size: 12px; color: #CBD5E1; margin-bottom: 8px;">
+            Para llevar la biblia a cualquier otra PC en Cuba sin internet, simplemente crea una carpeta en tu memoria USB y guarda:
+          </p>
+          <div style="background: #0F172A; padding: 10px; border-radius: 6px; font-family: ui-monospace, monospace; font-size: 11px; color: #94A3B8; border: 1px solid #1E293B;">
+            📁 Daimos_Cuba/<br>
+            &nbsp;&nbsp;├── 📄 index.html &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(este archivo)<br>
+            &nbsp;&nbsp;└── 🖼️ [Todas las fotos en la misma carpeta o dentro de una subcarpeta llamada "fotos/"]
+          </div>
+          <p style="font-size: 11px; color: #94A3B8; margin-top: 8px;">
+            Al hacer doble clic en <code>index.html</code> en cualquier PC, todas las fotos cargan al instante sin necesidad de instalar ningún software adicional.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MODAL DE FICHA TÉCNICA -->
+  <div id="char-modal" class="modal-overlay" onclick="if(event.target === this) closeModal()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span id="modal-badge" class="faction-badge"></span>
+          <span id="modal-jp" style="font-family: ui-monospace, monospace; font-size: 11px; color: #94A3B8;"></span>
+        </div>
+        <button onclick="closeModal()" style="background: none; border: none; color: #94A3B8; font-size: 20px; cursor: pointer; padding: 0 4px;">×</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: flex; gap: 14px; margin-bottom: 14px;">
+          <div class="modal-avatar-frame">
+            <img id="modal-img" class="avatar-img" src="" alt="">
+            <div id="modal-fallback" class="avatar-fallback" style="display: none;">
+              <span id="modal-fallback-kanji" class="fallback-kanji"></span>
+              <span class="fallback-sub">RETRATO CANÓNICO</span>
+            </div>
+          </div>
+          <div style="flex: 1; min-width: 0;">
+            <div style="font-size: 10px; font-family: ui-monospace, monospace; color: var(--daimos-gold); text-transform: uppercase;">Nombre Doblaje 2026/2027</div>
+            <h2 id="modal-name" style="font-size: 20px; font-weight: 800; color: #FFF; margin: 2px 0;"></h2>
+            <div id="modal-role" style="font-size: 11px; color: #CBD5E1; margin-bottom: 8px;"></div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+              <div style="background: #0F172A; padding: 6px 8px; border-radius: 6px; border: 1px solid #1E293B;">
+                <span style="display: block; font-size: 9px; font-family: ui-monospace, monospace; color: #64748B; text-transform: uppercase;">Seiyū (1978)</span>
+                <span id="modal-seiyu" style="font-size: 11px; font-weight: 700; color: #FFF;"></span>
+              </div>
+              <div style="background: #0F172A; padding: 6px 8px; border-radius: 6px; border: 1px solid #1E293B;">
+                <span style="display: block; font-size: 9px; font-family: ui-monospace, monospace; color: #64748B; text-transform: uppercase;">Tesitura Vocal</span>
+                <span id="modal-voice" style="font-size: 11px; font-weight: 700; color: var(--daimos-gold);"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background: #0F172A; padding: 8px 10px; border-radius: 6px; border: 1px solid #1E293B; margin-bottom: 12px;">
+          <div style="font-size: 9px; font-family: ui-monospace, monospace; color: #64748B; text-transform: uppercase; margin-bottom: 2px;">Vínculos &amp; Dinámica Dramática</div>
+          <div id="modal-relations" style="font-size: 11px; color: #CBD5E1; line-height: 1.4;"></div>
+        </div>
+
+        <div style="border-top: 1px solid #1E293B; padding-top: 10px; margin-bottom: 10px;">
+          <h3 style="font-size: 10px; font-family: ui-monospace, monospace; color: var(--daimos-gold); text-transform: uppercase; margin-bottom: 4px;">Pauta de Dirección en Sala (Dir. Ana Nora Calaza)</h3>
+          <div id="modal-notes" style="background: #0F172A; border: 1px solid #1E293B; border-radius: 6px; padding: 8px; font-size: 11px; color: #CBD5E1; line-height: 1.4;"></div>
+        </div>
+
+        <div style="border-top: 1px solid #1E293B; padding-top: 10px;">
+          <h3 style="font-size: 10px; font-family: ui-monospace, monospace; color: #94A3B8; text-transform: uppercase; margin-bottom: 4px;">Función Dramática &amp; Arco en 44 Capítulos</h3>
+          <div id="modal-arc" style="font-size: 11px; color: #CBD5E1; line-height: 1.4;"></div>
+          <div id="modal-provenance" class="prov-line" style="margin-top: 8px;"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button onclick="closeModal()" class="btn">Cerrar Ficha</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast-notice"></div>
+
+  <script>
+    // BASE DE DATOS OFICIAL CON NOMBRES EXACTOS Y MÚLTIPLES VARIANTES
+    const characters = [
+      {
+        id: "kazuya",
+        nameDub: "Kazuya Ryūzaki",
+        nameJp: "竜崎 一矢 (Kazuya Ryūzaki)",
+        kanjiLead: "一",
+        fileNames: ["Kazuya Ryūzaki.webp", "Kazuya Ryuzaki.webp", "Kazuya.webp", "Kazuya Ryūzaki.png", "Kazuya Ryuzaki.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/16/32770.jpg",
+        imagePosition: "center 30%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Base Daimobic",
+        role: "Piloto Titular de Daimos • Campeón de Kárate",
+        seiyu: "Akira Kamiya (神谷 明)",
+        voiceType: "Tenor Heroico Juvenil",
+        voiceCat: "Tenor",
+        relations: "Hijo del Dr. Isamu Ryūzaki; discípulo marcial del Dr. Izumi; enamorado incondicional de Erika.",
+        directorNotes: "Ataques de voz secos y directos procedentes del hara (abdomen). En combate proyecta fiereza marcial pura sin descontrolar agudos; con Erika, el tono se vuelve íntimo, roto por la tragedia y lírico.",
+        dramaticArc: "Arquetipo de Romeo cósmico. Comienza consumido por el deseo de vengar a su padre, pero su amor por Erika derrumba sus prejuicios contra los Baamianos, convirtiéndose en el apóstol de la coexistencia pacífica.",
+        provenance: "Settei de diseño oficial (Norio Shioyama, 1978)",
+        episodes: "Ep. 1 a 44"
+      },
+      {
+        id: "erika",
+        nameDub: "Princesa Erika",
+        nameJp: "エリカ (Erika)",
+        kanjiLead: "愛",
+        fileNames: ["Princesa Erika_2.png", "Princesa Erika.png", "Princesa_Erika_2.png", "Princesa_Erika.png", "Erika.png", "Princesa Erika.webp", "Erika.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/11/47621.jpg",
+        imagePosition: "center 18%",
+        faction: "Baam - Pacifista y Civil",
+        factionLabel: "Imperio Baam • Pacifista",
+        role: "Princesa Imperial de Baam • Fundadora de la Resistencia",
+        seiyu: "Miyuki Ueda (上田みゆき)",
+        voiceType: "Soprano Lírica Melancólica",
+        voiceCat: "Soprano",
+        relations: "Hija del Gran Mariscal Leon; hermana menor del Almirante Richter; amor predestinado de Kazuya.",
+        directorNotes: "Timbre dulce y afligido pero con sólida columna de aire. No es sumisa: transmite la carga de una culpa involuntaria y una pureza sagrada dispuesta al autosacrificio.",
+        dramaticArc: "Arquetipo de Julieta galáctica. Sobrevive a la amnesia, renuncia a sus privilegios cortesanos y funda el cuerpo médico de socorro sin distinción de especie.",
+        provenance: "Celuloide original de producción Toei Animation",
+        episodes: "Ep. 1 a 44"
+      },
+      {
+        id: "richter",
+        nameDub: "Almirante Richter",
+        nameJp: "リヒテル提督 (Richter)",
+        kanjiLead: "怒",
+        fileNames: ["Richter_(Tosho_Daimos).webp", "Richter.webp", "Almirante Richter.webp", "Richter.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/15/47622.jpg",
+        imagePosition: "center 20%",
+        faction: "Baam - Militar",
+        factionLabel: "Imperio Baam • Alto Mando",
+        role: "Comandante en Jefe de las Fuerzas de Ataque a la Tierra",
+        seiyu: "Osamu Ichikawa (市川 治)",
+        voiceType: "Tenor Dramático Aristocrático",
+        voiceCat: "Tenor",
+        relations: "Hijo primogénito del Gran Mariscal Leon; hermano mayor de Erika; señor de Raiza y Balbas.",
+        directorNotes: "Cúspide del villano romántico de Nagahama. Declamación shakespeariana, nobleza herida, dolor filial permanente. Nunca un matón vulgar: su tragedia nace del amor a su padre asesinado.",
+        dramaticArc: "Arquetipo de Teobaldo trágico. Cree que los terrestres envenenaron a Leon. Su venganza lo autodestruye hasta redimirse al descubrir el complot de Olban.",
+        provenance: "Celuloide de producción Toei / Roman Album #16",
+        episodes: "Ep. 1 a 44"
+      },
+      {
+        id: "kyoshiro",
+        nameDub: "Kyōshirō Yūzuki",
+        nameJp: "夕月 京四郎 (Kyōshirō Yūzuki)",
+        kanjiLead: "剣",
+        fileNames: ["Kyōshirō Yūzuki.png", "Kyoshiro Yuzuki.png", "Kyoshiro.png", "Kyōshirō Yūzuki.webp", "Kyoshiro Yuzuki.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/13/47624.jpg",
+        imagePosition: "center 20%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Base Daimobic",
+        role: "Piloto As del Galva FX-II • Maestro Espadachín",
+        seiyu: "Kazuyuki Sogabe (曽我部和行)",
+        voiceType: "Barítono Ligero / Mordaz",
+        voiceCat: "Barítono",
+        relations: "Mejor amigo y contrapunto de Kazuya; criado por su abuelo Ittōsai; copiloto con Nana.",
+        directorNotes: "Actitud relajada, irónica y callejera (estética afro-samurái). Suele citar aforismos antiguos. Cínico en la base, pero con filo mortal y templanza en combate.",
+        dramaticArc: "El 'Mercucio' del relato. Polo a tierra de Kazuya cuando este pierde el control por el amor.",
+        provenance: "Settei de diseño oficial (Sunrise, 1978)",
+        episodes: "Ep. 1 a 44"
+      },
+      {
+        id: "nana",
+        nameDub: "Nana Izumi",
+        nameJp: "和泉 ナナ (Nana Izumi)",
+        kanjiLead: "華",
+        fileNames: ["Nana Izumi.png", "Nana_Izumi.png", "Nana.png", "Nana Izumi.webp", "Nana.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/8/47623.jpg",
+        imagePosition: "center 18%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Base Daimobic",
+        role: "Copiloto del Galva FX-II • Francotiradora de Élite",
+        seiyu: "Yōko Kuri (栗 葉子)",
+        voiceType: "Soubrette Juvenil / Mezzosoprano Picante",
+        voiceCat: "Mezzo",
+        relations: "Nieta del Dr. Shin'ichirō Izumi; enamorada platónicamente de Kazuya; rival de Erika.",
+        directorNotes: "Energía viva, picante (16 años). Berrinches cómicos imitando ladridos ('¡Wan!'), pero con profundo desgarro ante el desamor y máxima frialdad con el rifle láser.",
+        dramaticArc: "Pasa de los celos infantiles a una madurez abnegada, sacrificando sus sentimientos por la felicidad de Kazuya.",
+        provenance: "Model Sheet Toei Dōga (1978)",
+        episodes: "Ep. 1 a 44"
+      },
+      {
+        id: "izumi",
+        nameDub: "Dr. Shin'ichirō Izumi",
+        nameJp: "和泉 振一郎博士 (Dr. Shin'ichirō Izumi)",
+        kanjiLead: "智",
+        fileNames: ["Shinichiro.webp", "Shinichiro Izumi.webp", "DrIzumi.webp", "Izumi.webp", "Shinichiro.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/14/47625.jpg",
+        imagePosition: "center 22%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Base Daimobic",
+        role: "Comandante General de la Base Daimobic • Maestro Zen",
+        seiyu: "Hisashi Katsuta (勝田 久)",
+        voiceType: "Barítono Maduro Paternal (60-65 años)",
+        voiceCat: "Barítono",
+        relations: "Abuelo de Nana; co-diseñador de Daimos; mentor marcial y padre sustituto de Kazuya.",
+        directorNotes: "Gravedad reposada y aplomo de maestro marcial. Frente al General Miwa, su autoridad moral inapelable debe aplastar la histeria castrense.",
+        dramaticArc: "Baluarte ético del bando terrestre. Mantiene la autonomía de Daimobic como bastión de defensa de la paz.",
+        provenance: "Celuloide de producción Nippon Sunrise",
+        episodes: "Ep. 1 a 44"
+      },
+      {
+        id: "isamu",
+        nameDub: "Dr. Isamu Ryūzaki",
+        nameJp: "竜崎 勇博士 (Dr. Isamu Ryūzaki)",
+        kanjiLead: "勇",
+        fileNames: ["isamu_ryuzaki.webp", "Isamu Ryuzaki.webp", "Isamu.webp", "isamu_ryuzaki.png", "DrRyuzaki.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/9/47626.jpg",
+        imagePosition: "center 18%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Prólogo / Lunar",
+        role: "Fundador de Daimobic • Creador de Daimos • Mártir",
+        seiyu: "Shōzō Iizuka (飯塚昭三)",
+        voiceType: "Barítono Dramático Profundo",
+        voiceCat: "Barítono",
+        relations: "Padre de Kazuya; creador de la energía Daimolite; contraparte del Emperador Leon.",
+        directorNotes: "Timbre cálido, visionario e imponente. En los recuerdos debe sonar como el testamento de la hermandad entre los pueblos.",
+        dramaticArc: "Abre los brazos a los refugiados de Baam y es acribillado en la cumbre diplomática por la conjura de Olban.",
+        provenance: "Settei oficial Norio Shioyama (1978)",
+        episodes: "Ep. 1 (Recurrente en Flashback)"
+      },
+      {
+        id: "miwa",
+        nameDub: "General Sakamori Miwa",
+        nameJp: "三輪 防人長官 (General Sakamori Miwa)",
+        kanjiLead: "軍",
+        fileNames: ["General_Miwa.webp", "General Miwa.webp", "GeneralMiwa.webp", "Miwa.webp", "General_Miwa.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/2/47627.jpg",
+        imagePosition: "center 18%",
+        faction: "Tierra - Militar",
+        factionLabel: "Ejército Terrestre • Mando Supremo",
+        role: "Comandante en Jefe de las Fuerzas de Defensa de la Tierra",
+        seiyu: "Tamio Ōki (大木民夫)",
+        voiceType: "Barítono Bajo Estridente Castrense",
+        voiceCat: "Bajo",
+        relations: "Superior del Capitán Kitō; enemigo moral de Kazuya y el Dr. Izumi.",
+        directorNotes: "Abrasivo, fanático, chovinista. No caricaturizarlo: su peligro real estriba en que posee los cañones y la ley militar de su lado.",
+        dramaticArc: "Alegoría del fascismo militar humano. Comete crímenes de guerra y demuestra que el mal no es monopolio del invasor.",
+        provenance: "Telecine 35mm Toei / Emisión AT-X",
+        episodes: "Ep. 1 a 43"
+      },
+      {
+        id: "balbas",
+        nameDub: "General Balbas",
+        nameJp: "猛将バルバス (Barubasu)",
+        kanjiLead: "武",
+        fileNames: ["balbas1.jpg", "balbas.jpg", "General_Balbas.jpg", "balbas.webp", "Balbas.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/3/47628.jpg",
+        imagePosition: "center 22%",
+        faction: "Baam - Militar",
+        factionLabel: "Imperio Baam • Ejército Expedicionario",
+        role: "Comandante Táctico • Vasallo de Honor de Richter",
+        seiyu: "Shōzō Iizuka (飯塚昭三)",
+        voiceType: "Bajo Profundo Cavernoso y Marcial",
+        voiceCat: "Bajo",
+        relations: "Hermano mayor del rebelde Himure; rival táctico de Daimos; devoto de Richter.",
+        directorNotes: "Rocoso, imponente, con honor espartano impenetrable. Sus lamentos ante las bajezas de Olban deben conmover.",
+        dramaticArc: "Evoluciona del choque frontal al martirio marcial: se inmola en el Ep. 35 para permitir que Kazuya suba al Daimos y salve a Baam.",
+        provenance: "Celuloide original Toei Dōga (1978)",
+        episodes: "Ep. 1 a 35"
+      },
+      {
+        id: "raiza",
+        nameDub: "Marquesa Raiza",
+        nameJp: "ライザ (Raiza)",
+        kanjiLead: "妖",
+        fileNames: ["Shockedraiza.webp", "Shocked_raiza.webp", "Raiza.webp", "Marquesa Raiza.webp", "Shockedraiza.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/5/47629.jpg",
+        imagePosition: "center 18%",
+        faction: "Baam - Militar",
+        factionLabel: "Imperio Baam • Estado Mayor",
+        role: "Científica Diseñadora de Mecha-Bestias de Baam",
+        seiyu: "Kazuko Yanaga (弥永和子)",
+        voiceType: "Mezzosoprano Dramática Sensual y Fría",
+        voiceCat: "Mezzo",
+        relations: "Consejera militar de Richter; enamorada trágica de Richter; perseguidora de Erika.",
+        directorNotes: "Sofisticada, gélida, calculadora. Mezcla intelecto científico despiadado con amor obsesivo hacia Richter.",
+        dramaticArc: "Lady Macbeth mecha. Justifica cualquier atrocidad por Richter hasta rebelarse contra Olban y ser ejecutada.",
+        provenance: "Settei de vestuario Norio Shioyama (1978)",
+        episodes: "Ep. 1 a 42"
+      },
+      {
+        id: "olban",
+        nameDub: "Gran Mariscal Olban",
+        nameJp: "オルバン大元帥 (Emperor Olban)",
+        kanjiLead: "覇",
+        fileNames: ["Gran Mariscal Olban.webp", "Gran_Mariscal_Olban.webp", "Olban.webp", "olban.webp", "Gran Mariscal Olban.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/16/47630.jpg",
+        imagePosition: "center 16%",
+        faction: "Corte & Disidencia",
+        factionLabel: "Pequeño Baam • Regente Usurpador",
+        role: "Soberano Usurpador de Pequeño Baam • Conspirador",
+        seiyu: "Hisashi Katsuta (勝田 久)",
+        voiceType: "Bajo Maquiavélico Teatral y Autoritario",
+        voiceCat: "Bajo",
+        relations: "Tío del Príncipe Melubi; asesino de Leon; amo de Georiya.",
+        directorNotes: "Untuoso y viscoso. Modula de la falsa piedad paternal a la furia sanguinaria. Risa sardónica helada.",
+        dramaticArc: "El verdadero culpable: mandó a envenenar la copa de Leon para culpar a la Tierra y adueñarse de los mil millones de refugiados.",
+        provenance: "Model Sheet oficial Toei Dōga",
+        episodes: "Ep. 1, 5, 34 a 44"
+      },
+      {
+        id: "leon",
+        nameDub: "Gran Mariscal Leon",
+        nameJp: "リオン大元帥 (Emperor Leon)",
+        kanjiLead: "王",
+        fileNames: ["Leon_daimos.webp", "Leon daimos.webp", "Leon.webp", "Gran Mariscal Leon.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/12/47631.jpg",
+        imagePosition: "center 22%",
+        faction: "Baam - Pacifista y Civil",
+        factionLabel: "Imperio Baam • Trono Legítimo",
+        role: "Soberano Supremo Original de Baam • Padre de Richter y Erika",
+        seiyu: "Tamio Ōki (大木民夫)",
+        voiceType: "Bajo Noble Venerable y Conciliador",
+        voiceCat: "Bajo",
+        relations: "Padre de Richter y Erika; tío de Melubi; contraparte del Dr. Isamu Ryūzaki.",
+        directorNotes: "Majestuoso y cargado con el cansancio del éxodo estelar. Su agonía pidiendo paz debe conmover el estudio.",
+        dramaticArc: "El rey mártir. Guió a su pueblo pacífico al sistema solar solo para ser envenenado a traición en la mesa de negociaciones.",
+        provenance: "Celuloide oficial Toei Dōga (Episodio 1)",
+        episodes: "Ep. 1 (Flashbacks en Ep. 5 y 17)"
+      },
+      {
+        id: "okane",
+        nameDub: "Doña Okane",
+        nameJp: "おかねさん (Okane-san)",
+        kanjiLead: "母",
+        fileNames: ["okane_from_daimos.webp", "okane from daimos.webp", "Okane.webp", "Doña Okane.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/7/47632.jpg",
+        imagePosition: "center 18%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Base Daimobic",
+        role: "Ama de Llaves y Matriarca Doméstica de Daimobic",
+        seiyu: "Miyoko Asō (麻生美代子)",
+        voiceType: "Contralto Madura de Carácter Cómico",
+        voiceCat: "Carácter",
+        relations: "Tía y tutora de Genta; protectora incondicional de los pilotos y del Dr. Izumi.",
+        directorNotes: "Fuerza vocal rústica y cómico-popular (ataques con sartenes) que transita a una ternura maternal conmovedora.",
+        dramaticArc: "Corazón civil de la fortaleza militar. Preserva la calidez del hogar en medio de la devastación planetaria.",
+        provenance: "Celuloide original Nippon Sunrise (1978)",
+        episodes: "Ep. 1 a 44"
+      },
+      {
+        id: "genta",
+        nameDub: "Genta",
+        nameJp: "元太 (Genta)",
+        kanjiLead: "童",
+        fileNames: ["genta.webp", "Genta.webp", "genta.png", "Genta.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/4/47633.jpg",
+        imagePosition: "center 24%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Base Daimobic",
+        role: "Aprendiz Travieso • Mascota Infantil de la Base",
+        seiyu: "Masako Nozawa (野沢雅子)",
+        voiceType: "Voz Infantil Masculina Enérgica",
+        voiceCat: "Carácter",
+        relations: "Sobrino huérfano de Doña Okane; admirador absoluto de Kazuya y de Daimos.",
+        directorNotes: "Descarado, espontáneo, callejero. Sin amaneramientos: un pilluelo que adora el kárate pero sufre el impacto de la guerra.",
+        dramaticArc: "Aporta la perspectiva infantil inocente dentro del conflicto de supervivencia biológica.",
+        provenance: "Model Sheet de expresiones Sunrise (1978)",
+        episodes: "Ep. 12 a 44"
+      },
+      {
+        id: "cairo",
+        nameDub: "Cairo",
+        nameJp: "カイロ (Kairo)",
+        kanjiLead: "機",
+        fileNames: ["CairoProfile.webp", "Cairo.webp", "cairo.webp", "CairoProfile.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/6/47634.jpg",
+        imagePosition: "center 20%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Soporte Mecánico",
+        role: "Robot Auxiliar de Operaciones y Alerta Temprana",
+        seiyu: "Yō Inoue (井上 瑤)",
+        voiceType: "Voz Aguda Metálica Característica / Cómica",
+        voiceCat: "Carácter",
+        relations: "Asistente del Dr. Izumi; blanco habitual de las palizas cómicas de Okane.",
+        directorNotes: "Tono quejumbroso y cantarín con modulación electrónica ligera en sala. Interpretación de base muy orgánica.",
+        dramaticArc: "Alivio cómico cibernético y operador del radar central de combate de la Base Daimobic.",
+        provenance: "Cel de producción Toei Dōga (1978)",
+        episodes: "Ep. 1 a 44"
+      },
+      {
+        id: "margarete",
+        nameDub: "Margarete",
+        nameJp: "マルガレーテ (Margarete)",
+        kanjiLead: "守",
+        fileNames: ["Margaret_2.webp", "Margarete_2.webp", "Margarete.webp", "Margaret.webp", "Margarete.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/10/47635.jpg",
+        imagePosition: "center 18%",
+        faction: "Baam - Pacifista y Civil",
+        factionLabel: "Imperio Baam • Corte Real",
+        role: "Nodriza Real de la Dinastía Leon • Confidente de Erika",
+        seiyu: "Miyoko Asō (麻生美代子)",
+        voiceType: "Contralto Solemne y Protectora",
+        voiceCat: "Mezzo",
+        relations: "Madre sustituta de Richter y Erika; guardiana de la memoria del Emperador Leon.",
+        directorNotes: "Timbre señorial, lleno de sabiduría antigua y abnegación. Es la única persona capaz de encarar a Richter con la autoridad de una madre para frenar sus accesos de cólera. Su martirio requiere una entereza desgarradora.",
+        dramaticArc: "Protege el secreto del amor entre Erika y Kazuya por considerarlo el único puente hacia la paz. En el episodio 16 entrega heroicamente su vida interponiéndose ante el fuego enemigo para que Erika escape a la superficie.",
+        provenance: "Celuloide de producción Toei Video / Master broadcast",
+        episodes: "Ep. 1 a 16"
+      },
+      {
+        id: "aizam",
+        nameDub: "Dr. Aizam",
+        nameJp: "アイザム (Aizam)",
+        kanjiLead: "鋼",
+        fileNames: ["Aizam.webp", "aizam.webp", "Dr. Aizam.webp", "Dr_Aizam.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/11/47636.jpg",
+        imagePosition: "center 18%",
+        faction: "Baam - Militar",
+        factionLabel: "Imperio Baam • Élite Científica",
+        role: "Científico Supremo • Creador del Metal Hiperelástico",
+        seiyu: "Makio Inoue (井上真樹夫)",
+        voiceType: "Barítono Melancólico Aristocrático",
+        voiceCat: "Barítono",
+        relations: "Amigo de infancia y hermano de juramento de Richter.",
+        directorNotes: "Elegancia terminal y decadente. Oculta una dolencia fatal mientras agota sus fuerzas creando armas para Richter.",
+        dramaticArc: "Eje de la célebre 'Trilogía de Aizam' (Ep. 26-28), forzando a Daimos al límite y muriendo en brazos de su amigo.",
+        provenance: "Celuloide original Toei Animation / Tokuma Roman Album #16",
+        episodes: "Ep. 26 a 28"
+      },
+      {
+        id: "halleck",
+        nameDub: "Gurney Halleck",
+        nameJp: "ガーニィ・ハレック (Gurney Halleck)",
+        kanjiLead: "義",
+        fileNames: ["Gurneyhalleck2a.webp", "Gurney_Halleck.webp", "Halleck.webp", "Gurneyhalleck2a.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/15/47637.jpg",
+        imagePosition: "center 18%",
+        faction: "Baam - Pacifista y Civil",
+        factionLabel: "Imperio Baam • Honor de Armas",
+        role: "Maestro de Armas • Campeón del Duelo Singular",
+        seiyu: "Hiroya Ishimaru (石丸博也)",
+        voiceType: "Tenor / Barítono Marcial Noble",
+        voiceCat: "Tenor",
+        relations: "Instructor marcial de Richter; contraparte de honor marcial de Kazuya.",
+        directorNotes: "Voz limpia, viril y caballeresca. Al batirse contra Kazuya debe palparse hermandad y respeto entre deportistas.",
+        dramaticArc: "Defiende a Kazuya al notar la traición de Raiza, rescata a Erika y es asesinado vilmente en un hospital bajo el odio de Miwa.",
+        provenance: "Cel oficial Toei Dōga (Ep. 9 y 17)",
+        episodes: "Ep. 9 y 17"
+      },
+      {
+        id: "georiya",
+        nameDub: "Ministro Georiya",
+        nameJp: "ゲロイヤー (Georiya)",
+        kanjiLead: "狡",
+        fileNames: ["guerroyer1.jpg", "guerroyer.jpg", "Georiya.webp", "Ministro_Georiya.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/2/47638.jpg",
+        imagePosition: "center 18%",
+        faction: "Corte & Disidencia",
+        factionLabel: "Pequeño Baam • Policía Secreta",
+        role: "Jefe de Seguridad Imperial • Brazo Ejecutor del Regicidio",
+        seiyu: "Kazuya Tatekabe (たてかべ和也)",
+        voiceType: "Barítono Bajo Rastrero y Viscoso",
+        voiceCat: "Bajo",
+        relations: "Brazo derecho de Olban; enemigo clandestino de Richter y de los pacifistas.",
+        directorNotes: "Servil con el poder, sádico con los indefensos y cobarde al verse acorralado. Su ajusticiamiento debe sonar patético.",
+        dramaticArc: "Vertió el veneno en la copa de Leon. Es decapitado por la espada de Richter cuando este descubre la farsa.",
+        provenance: "Celuloide original Nippon Sunrise (1978)",
+        episodes: "Ep. 1, 5, 34 a 42"
+      },
+      {
+        id: "cindy",
+        nameDub: "Cindy",
+        nameJp: "シンディ (Cindy)",
+        kanjiLead: "情",
+        fileNames: ["Cindywings.webp", "Cindy.webp", "cindy.webp", "Cindywings.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/13/47639.jpg",
+        imagePosition: "center 18%",
+        faction: "Baam - Pacifista y Civil",
+        factionLabel: "Imperio Baam • Servidumbre de Paz",
+        role: "Doncella Personal y Amiga Íntima de Erika",
+        seiyu: "Eiko Masuyama (増山江威子)",
+        voiceType: "Soprano Juvenil Dulce y Valerosa",
+        voiceCat: "Soprano",
+        relations: "Leal sirvienta de Erika; compañera de sacrificio de Margarete.",
+        directorNotes: "Voz aterciopelada y tímida. Vence el terror visceral a la guerra por devoción pura a Erika.",
+        dramaticArc: "Se inmola con Margarete en el Ep. 16 atrayendo las balas de los centinelas para salvar a Erika.",
+        provenance: "Master telecine Toei Dōga (Ep. 13-16)",
+        episodes: "Ep. 13 a 16"
+      },
+      {
+        id: "melubi",
+        nameDub: "Príncipe Melubi",
+        nameJp: "メルビィ (Prince Melubi)",
+        kanjiLead: "忍",
+        fileNames: ["melvi_daimos.webp", "melvi.webp", "Melubi.webp", "Principe_Melubi.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/14/47640.jpg",
+        imagePosition: "center 18%",
+        faction: "Corte & Disidencia",
+        factionLabel: "Pequeño Baam • Resistencia",
+        role: "Príncipe Imperial • Conspirador Clave Pro-Paz",
+        seiyu: "Masatō Ibu (伊武雅刀)",
+        voiceType: "Barítono Dúctil (Bufón Ebrio / Líder Lúcido)",
+        voiceCat: "Barítono",
+        relations: "Sobrino carnal de Olban; primo de Richter y Erika.",
+        directorNotes: "El 'Hamlet' de Baam. En público finge ser un noble decadente y borracho; en secreto su voz es afilada, culta y decidida.",
+        dramaticArc: "Finge estupidez para eludir a la policía de Olban mientras abre rutas de fuga a prisioneros y disidentes.",
+        provenance: "Model Sheet Toei Dōga (Episodio 19)",
+        episodes: "Ep. 19"
+      },
+      {
+        id: "uoorin",
+        nameDub: "Doctor Uoorin (Walin)",
+        nameJp: "ウォーリン (Dr. Uoorin / Walin)",
+        kanjiLead: "医",
+        fileNames: ["Doctor Uoorin (Walin).jpg", "Doctor_Uoorin_(Walin).jpg", "Doctor Uoorin.jpg", "Walin.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/8/47641.jpg",
+        imagePosition: "center 18%",
+        faction: "Baam - Pacifista y Civil",
+        factionLabel: "Imperio Baam • Cuerpo Médico",
+        role: "Jefe Médico del Castillo Submarino • Humanitario",
+        seiyu: "Mikio Terashima (寺島幹夫)",
+        voiceType: "Barítono Maduro Sereno y Compasivo",
+        voiceCat: "Barítono",
+        relations: "Antiguo médico personal de Leon; protector clandestino de Margarete y Erika.",
+        directorNotes: "Timbre clínico, ético y reposado. Encarna el juramento hipocrático atendiendo a heridos sin importar su bando.",
+        dramaticArc: "Se niega a delatar a los fugitivos y opera a Erika y Halleck bajo la amenaza de la policía secreta.",
+        provenance: "Master broadcast Nippon Sunrise",
+        episodes: "Ep. 9, 14, 16"
+      },
+      {
+        id: "yahoba",
+        nameDub: "Gran Sacerdote Yahoba",
+        nameJp: "ヤホバ (Archbishop Yahoba)",
+        kanjiLead: "聖",
+        fileNames: ["Gran Sacerdote Yahoba.jpg", "Gran_Sacerdote_Yahoba.jpg", "Yahoba.webp", "Archbishop_Yahoba.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/16/47642.jpg",
+        imagePosition: "center 18%",
+        faction: "Corte & Disidencia",
+        factionLabel: "Pequeño Baam • Jerarquía Espiritual",
+        role: "Gran Patriarca Religioso de la Fe de Baam",
+        seiyu: "Yuzuru Fujimoto (藤本 譲)",
+        voiceType: "Bajo Solemne Litúrgico Resonante",
+        voiceCat: "Bajo",
+        relations: "Máxima autoridad espiritual de los 1000 millones de colonos de Pequeño Baam.",
+        directorNotes: "Cadencia litúrgica, lenta y venerable. Su fingida sumisión a Olban oculta la furia santa de quien ve su templo profanado.",
+        dramaticArc: "Acepta casar a Olban con Erika para ocultar espadas, liberar a Richter de mazmorras e introducirlo al altar nupcial.",
+        provenance: "Celuloide original Toei Animation (Ep. 42-44)",
+        episodes: "Ep. 42 a 44"
+      },
+      {
+        id: "himure",
+        nameDub: "Comandante Himure (Himre)",
+        nameJp: "ヒムレー (Himure)",
+        kanjiLead: "伝",
+        fileNames: ["Himure.webp", "himure.webp", "Himre.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/3/47643.jpg",
+        imagePosition: "center 15%",
+        faction: "Corte & Disidencia",
+        factionLabel: "Pequeño Baam • Rebelión Militar",
+        role: "Oficial Subversivo • Portador de la Evidencia del Regicidio",
+        seiyu: "Ryūsei Nakao (中尾隆聖)",
+        voiceType: "Tenor Marcial Desesperado y Apasionado",
+        voiceCat: "Tenor",
+        relations: "Hermano menor del General Balbas; cabecilla del motín militar.",
+        directorNotes: "Intensidad jadeante y urgente. Transmite la angustia de quien huye por el espacio con el documento que salvará a su hermano.",
+        dramaticArc: "Roba los archivos de la orden del envenenamiento firmada por Olban y huye a la Tierra antes de ser derribado en el Ep. 34.",
+        provenance: "Master telecine Toei Video (Episodio 34)",
+        episodes: "Ep. 34"
+      },
+      {
+        id: "barandook",
+        nameDub: "Gobernador Barandook",
+        nameJp: "バランドーク (Barandook)",
+        kanjiLead: "和",
+        fileNames: ["Barandook.webp", "barandook.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/7/47644.jpg",
+        imagePosition: "center 15%",
+        faction: "Baam - Pacifista y Civil",
+        factionLabel: "Imperio Baam • Misión Utopía",
+        role: "Comandante del Contingente Colonizador de Convivencia Pacífica",
+        seiyu: "Mahito Tsujimura (辻村真人)",
+        voiceType: "Barítono Maduro Diplomático y Conciliador",
+        voiceCat: "Barítono",
+        relations: "Socio pacífico del Dr. Douglas Banks; interlocutor con la Tierra.",
+        directorNotes: "Tono reflexivo y noble. Contrasta frontalmente con la histeria belicista de Richter y Miwa.",
+        dramaticArc: "Funda en Nueva Zelanda un santuario sin armas, probando la viabilidad de la coexistencia pacífica.",
+        provenance: "Settei episódico Toei Dōga (Ep. 20)",
+        episodes: "Ep. 20 a 31"
+      },
+      {
+        id: "banks",
+        nameDub: "Dr. Douglas Banks",
+        nameJp: "ダグラス・バンクス博士 (Dr. Douglas Banks)",
+        kanjiLead: "探",
+        fileNames: ["douglasbanks.webp", "douglas_banks.webp", "DrBanks.webp", "Banks.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/15/47645.jpg",
+        imagePosition: "center 18%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Científico Internacional",
+        role: "Director del Instituto Científico de Nueva Zelanda",
+        seiyu: "Shōzō Iizuka (飯塚昭三)",
+        voiceType: "Barítono Académico Apacible y Fuerte",
+        voiceCat: "Barítono",
+        relations: "Colega del Dr. Izumi; protector de los refugiados baamianos.",
+        directorNotes: "Humanista, reposado. Demuestra que no todos los humanos comparten la xenofobia del General Miwa.",
+        dramaticArc: "Descifra los blindajes de energía de Baam y transfiere la tecnología a Daimos para repeler las mecha-bestias.",
+        provenance: "Celuloide original Nippon Sunrise (Ep. 20 y 27)",
+        episodes: "Ep. 20, 27"
+      },
+      {
+        id: "kito",
+        nameDub: "Capitán Kitō",
+        nameJp: "鬼頭隊長 (Captain Kitō)",
+        kanjiLead: "鬼",
+        fileNames: ["Capitán Kitō.jpg", "Capitan Kito.jpg", "Capitán_Kito.jpg", "Kito.webp", "Kitou.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/12/47646.jpg",
+        imagePosition: "center 15%",
+        faction: "Tierra - Militar",
+        factionLabel: "Ejército Terrestre • Fuerzas Especiales",
+        role: "Comandante de Operaciones de Asalto • Oficial de Campo",
+        seiyu: "Tesshō Genda (玄田哲章)",
+        voiceType: "Bajo-Barítono Rudo Curtido en Trinchera",
+        voiceCat: "Bajo",
+        relations: "Oficial subordinado del General Miwa; perdió a su familia en los ataques iniciales.",
+        directorNotes: "Voz áspera de soldado curtido. Pasa del odio homicida al despertar ético que le impide acatar órdenes de masacre.",
+        dramaticArc: "Evolución moral capital: se rebela contra Miwa en Pequeño Baam y defiende a los refugiados alienígenas desarmados.",
+        provenance: "Master televisivo Toei Dōga (1978)",
+        episodes: "Ep. 1, 23, 40 a 44"
+      },
+      {
+        id: "kaiya",
+        nameDub: "Kaiya",
+        nameJp: "カイヤ (Kaiya)",
+        kanjiLead: "民",
+        fileNames: ["Kaiya.jpg", "Kaiya.webp", "kaiya.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/5/47647.jpg",
+        imagePosition: "center 20%",
+        faction: "Corte & Disidencia",
+        factionLabel: "Pequeño Baam • Subsuelo Popular",
+        role: "Portavoz de los Trabajadores y Esclavos de Pequeño Baam",
+        seiyu: "Minori Matsushima (松島みのり)",
+        voiceType: "Mezzosoprano / Contralto Curtida y Rebelde",
+        voiceCat: "Mezzo",
+        relations: "Líder civil clandestina de los barrios subterráneos marginados.",
+        directorNotes: "Voz de mujer obrera, apasionada, enérgica y castigada por la escasez. Agitación popular genuina.",
+        dramaticArc: "Coordina el levantamiento civil que asalta las puertas del palacio imperial cuando Daimos penetra en la colonia.",
+        provenance: "Settei secundarios Toei Animation (1978)",
+        episodes: "Ep. 38, 43, 44"
+      },
+      {
+        id: "reiko",
+        nameDub: "Reiko",
+        nameJp: "レイコ (Reiko)",
+        kanjiLead: "麗",
+        fileNames: ["reiko_daimos.webp", "Reiko.webp", "reiko.webp", "reiko_daimos.png"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/9/47648.jpg",
+        imagePosition: "center 18%",
+        faction: "Tierra - Daimobic",
+        factionLabel: "Tierra • Comunicaciones Daimobic",
+        role: "Operadora Central de Telemetría • Amor de Kyōshirō",
+        seiyu: "Kazuko Sugiyama (杉山佳寿子)",
+        voiceType: "Soprano Ligera Dulce y Profesional",
+        voiceCat: "Soprano",
+        relations: "Compañera de base; coprotagonista de la emblemática escena del 'Je t'aime'.",
+        directorNotes: "Dicción castrense limpia en combate; modulación coqueta y cálida en sus interacciones con Kyōshirō.",
+        dramaticArc: "Aporta humanidad y ligereza romántica al entorno castrense de la base, desarmando la coraza cínica del espadachín.",
+        provenance: "Master televisivo Toei Dōga (Ep. 22)",
+        episodes: "Ep. 2, 7, 22"
+      },
+      {
+        id: "zauro",
+        nameDub: "Comandante Zauro",
+        nameJp: "ザウロ (Zauro)",
+        kanjiLead: "刑",
+        fileNames: ["Comandante Zauro.jpg", "Comandante_Zauro.jpg", "Zauro.jpg", "Zauro.webp"],
+        webFallback: "https://cdn.myanimelist.net/images/characters/11/47649.jpg",
+        imagePosition: "center 15%",
+        faction: "Corte & Disidencia",
+        factionLabel: "Pequeño Baam • Policía Política",
+        role: "Jefe de Ejecuciones y Purga Política de Olban y Georiya",
+        seiyu: "Yoshito Miyamura (宮村義人)",
+        voiceType: "Barítono Monótono Seco y Despiadado",
+        voiceCat: "Barítono",
+        relations: "Verdugo de los rebeldes; emboscador del General Balbas.",
+        directorNotes: "Voz burocrática del terror de estado. Frialdad implacable desprovista de cualquier empatía.",
+        dramaticArc: "Encarna el aparato policíaco que aterroriza a los colonos hasta la caída final del régimen.",
+        provenance: "Celuloide original Nippon Sunrise (Ep. 35 y 38)",
+        episodes: "Ep. 35, 38"
+      }
+    ];
+
+    // MEMORIA DE IMÁGENES PERSISTENTES
+    const localAssetCache = {};
+
+    try {
+      const saved = localStorage.getItem('daimos_images_cache');
+      if (saved) {
+        Object.assign(localAssetCache, JSON.parse(saved));
+      }
+    } catch (e) {
+      console.warn("Storage inaccesible:", e);
+    }
+
+    // Identificador tolerante de archivos locales al arrastrar o vincular
+    function matchFilenameToId(fileName) {
+      const f = fileName.toLowerCase().replace(/[_\-\s\(\)]/g, '');
+      if (f.includes('kazuya') || f.includes('ryuzaki') || f.includes('ryūzaki')) return 'kazuya';
+      if (f.includes('erika')) return 'erika';
+      if (f.includes('richter') || f.includes('rihiteru')) return 'richter';
+      if (f.includes('kyoshiro') || f.includes('kyōshirō') || f.includes('yuzuki') || f.includes('yūzuki')) return 'kyoshiro';
+      if (f.includes('nana')) return 'nana';
+      if (f.includes('shinichiro') || (f.includes('izumi') && !f.includes('nana'))) return 'izumi';
+      if (f.includes('isamu') || f.includes('drryuzaki')) return 'isamu';
+      if (f.includes('miwa')) return 'miwa';
+      if (f.includes('balbas') || f.includes('barubasu')) return 'balbas';
+      if (f.includes('shocked') || f.includes('raiza') || f.includes('leiza')) return 'raiza';
+      if (f.includes('olban') || f.includes('oruban')) return 'olban';
+      if (f.includes('leon') || f.includes('rion')) return 'leon';
+      if (f.includes('okane')) return 'okane';
+      if (f.includes('genta')) return 'genta';
+      if (f.includes('cairo') || f.includes('kairo')) return 'cairo';
+      if (f.includes('margaret') || f.includes('margarete')) return 'margarete';
+      if (f.includes('aizam')) return 'aizam';
+      if (f.includes('halleck') || f.includes('harekku') || f.includes('gurney')) return 'halleck';
+      if (f.includes('georiya') || f.includes('geroiya') || f.includes('guerroyer') || f.includes('gero')) return 'georiya';
+      if (f.includes('cindy') || f.includes('shindi')) return 'cindy';
+      if (f.includes('melubi') || f.includes('melvi')) return 'melubi';
+      if (f.includes('uoorin') || f.includes('walin')) return 'uoorin';
+      if (f.includes('yahoba')) return 'yahoba';
+      if (f.includes('himure') || f.includes('himre')) return 'himure';
+      if (f.includes('barandook')) return 'barandook';
+      if (f.includes('banks') || f.includes('douglas')) return 'banks';
+      if (f.includes('kito') || f.includes('kitō') || f.includes('kitou')) return 'kito';
+      if (f.includes('kaiya')) return 'kaiya';
+      if (f.includes('reiko')) return 'reiko';
+      if (f.includes('zauro')) return 'zauro';
+      return null;
+    }
+
+    // Búsqueda inteligente de rutas: locales, carpetas habituales y respaldo web
+    function getCandidatePaths(character) {
+      const list = [];
+      (character.fileNames || []).forEach(fn => {
+        // APK/OFFLINE: todas las imágenes reales viven en ./fotos/
+        list.push(`fotos/${fn}`);
+        list.push(`fotos/${encodeURIComponent(fn)}`);
+        // Compatibilidad con ejecución directa desde otras estructuras.
+        list.push(fn);
+        list.push(`./${fn}`);
+        list.push(`img/${fn}`);
+        list.push(encodeURIComponent(fn));
+      });
+      // No usar recursos externos en la edición APK/offline.
+      return list;
+    }
+
+    function handleFileSelect(files) {
+      if (!files || files.length === 0) return;
+      let matchedCount = 0;
+
+      Array.from(files).forEach(file => {
+        const matchedId = matchFilenameToId(file.name);
+        if (matchedId) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const dataUrl = e.target.result;
+            localAssetCache[matchedId] = dataUrl;
+            matchedCount++;
+
+            try {
+              localStorage.setItem('daimos_images_cache', JSON.stringify(localAssetCache));
+            } catch (err) {}
+
+            renderGrid();
+            renderMatrix();
+            showToast(`¡Foto vinculada: ${file.name}!`);
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3500);
+    }
+
+    function downloadCurrentHtml() {
+      const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      const blob = new Blob([htmlContent], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "daimos_guia_offline_2026.html";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("¡Archivo guardado con éxito! Puedes renombrarlo a index.html");
+    }
+
+    let currentFaction = 'all';
+
+    function getFactionBadgeClass(faction) {
+      switch(faction) {
+        case 'Tierra - Daimobic': return 'badge-earth';
+        case 'Tierra - Militar': return 'badge-mil';
+        case 'Baam - Militar': return 'badge-baam';
+        case 'Baam - Pacifista y Civil': return 'badge-peace';
+        case 'Corte & Disidencia': return 'badge-rebel';
+        default: return 'badge-earth';
+      }
+    }
+
+    function renderGrid() {
+      const list = getFilteredList();
+      const container = document.getElementById('characters-container');
+      container.innerHTML = '';
+      document.getElementById('visible-count').innerText = list.length;
+
+      if (list.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1/-1; text-align: center; padding: 40px; background: var(--bg-card); border-radius: 10px; border: 1px solid var(--border);">
+            <p style="color: #94A3B8;">No se encontraron personajes que coincidan con la búsqueda.</p>
+          </div>
+        `;
+        return;
+      }
+
+      list.forEach(c => {
+        const card = document.createElement('div');
+        card.className = "card";
+
+        const hasCached = !!localAssetCache[c.id];
+        const initialSrc = hasCached ? localAssetCache[c.id] : `fotos/${encodeURIComponent(c.fileNames[0])}`;
+
+        card.innerHTML = `
+          <div>
+            <div class="card-top">
+              <span class="faction-badge ${getFactionBadgeClass(c.faction)}">${c.factionLabel}</span>
+              <span style="color: #94A3B8;">${c.episodes}</span>
+            </div>
+
+            <div class="card-main">
+              <div class="avatar-box">
+                <img src="${initialSrc}" 
+                     alt="${c.nameDub}" 
+                     class="avatar-img" 
+                     data-char-id="${c.id}"
+                     data-try-idx="0"
+                     referrerpolicy="no-referrer"
+                     style="object-position: ${c.imagePosition || 'center 20%'};"
+                     onerror="handleImageFallback(this, '${c.id}')">
+                <div class="avatar-fallback" style="display: none;">
+                  <span class="fallback-kanji">${c.kanjiLead}</span>
+                  <span class="fallback-sub">1978 / 2026</span>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="jp-name">${c.nameJp}</div>
+                <h3 class="dub-name">${c.nameDub}</h3>
+                <div class="role-text">${c.role}</div>
+
+                <div class="meta-line"><b>Seiyū:</b> <span>${c.seiyu}</span></div>
+                <div class="meta-line"><b>Voz:</b> <span class="voice-txt">${c.voiceType}</span></div>
+              </div>
+            </div>
+
+            <div class="card-notes">
+              <div class="notes-box">
+                <strong>Atril:</strong> ${c.directorNotes}
+              </div>
+              <div class="prov-line">${c.provenance}</div>
+            </div>
+          </div>
+
+          <div class="card-foot">
+            <button class="btn-modal" onclick="openModal('${c.id}')">
+              Abrir Ficha de Atril Completa
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Reintentos elegantes: local -> variantes de nombre -> fotos/ -> respaldo web -> kanji
+    function handleImageFallback(imgEl, charId) {
+      if (localAssetCache[charId]) {
+        imgEl.src = localAssetCache[charId];
+        return;
+      }
+
+      const c = characters.find(item => item.id === charId);
+      if (!c) return;
+
+      const candidates = getCandidatePaths(c);
+      let currentIdx = parseInt(imgEl.getAttribute('data-try-idx') || '0', 10);
+      let nextIdx = currentIdx + 1;
+
+      if (nextIdx < candidates.length) {
+        imgEl.setAttribute('data-try-idx', nextIdx.toString());
+        imgEl.src = candidates[nextIdx];
+      } else {
+        imgEl.style.display = 'none';
+        const fallback = imgEl.parentElement.querySelector('.avatar-fallback');
+        if (fallback) fallback.style.display = 'flex';
+      }
+    }
+
+    function renderMatrix() {
+      const tbody = document.getElementById('matrix-tbody');
+      tbody.innerHTML = '';
+
+      characters.forEach(c => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-weight: 700; color: #FFF;">${c.nameDub}</td>
+          <td style="font-family: ui-monospace, monospace; color: var(--daimos-accent-gold); font-size: 11px;">${c.nameJp}</td>
+          <td><span class="faction-badge ${getFactionBadgeClass(c.faction)}">${c.factionLabel}</span></td>
+          <td style="color: #E2E8F0;">${c.seiyu}</td>
+          <td style="color: var(--daimos-gold); font-family: ui-monospace, monospace; font-size: 11px;">${c.voiceType}</td>
+          <td style="color: #CBD5E1; max-width: 280px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${c.dramaticArc}</td>
+          <td style="text-align: center;">
+            <button onclick="openModal('${c.id}')" style="background: none; border: none; color: #94A3B8; cursor: pointer;" title="Ver Ficha">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function getFilteredList() {
+      const q = (document.getElementById('search-input')?.value || '').toLowerCase().trim();
+      const v = document.getElementById('voice-filter')?.value || 'all';
+
+      return characters.filter(c => {
+        const matchFaction = (currentFaction === 'all' || c.faction === currentFaction);
+        const matchVoice = (v === 'all' || c.voiceCat === v);
+        const matchQuery = q === '' ||
+          c.nameDub.toLowerCase().includes(q) ||
+          c.nameJp.toLowerCase().includes(q) ||
+          c.seiyu.toLowerCase().includes(q) ||
+          c.role.toLowerCase().includes(q) ||
+          c.directorNotes.toLowerCase().includes(q) ||
+          c.dramaticArc.toLowerCase().includes(q) ||
+          c.voiceType.toLowerCase().includes(q);
+
+        return matchFaction && matchVoice && matchQuery;
+      });
+    }
+
+    function filterCharacters() {
+      renderGrid();
+    }
+
+    function setFaction(fac, btn) {
+      currentFaction = fac;
+      document.querySelectorAll('.faction-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderGrid();
+    }
+
+    function updateCounts() {
+      document.getElementById('count-all').innerText = characters.length;
+      document.getElementById('count-daimobic').innerText = characters.filter(c => c.faction === 'Tierra - Daimobic').length;
+      document.getElementById('count-militar').innerText = characters.filter(c => c.faction === 'Tierra - Militar').length;
+      document.getElementById('count-baammil').innerText = characters.filter(c => c.faction === 'Baam - Militar').length;
+      document.getElementById('count-baampac').innerText = characters.filter(c => c.faction === 'Baam - Pacifista y Civil').length;
+      document.getElementById('count-disidencia').innerText = characters.filter(c => c.faction === 'Corte & Disidencia').length;
+    }
+
+    function openModal(id) {
+      const c = characters.find(item => item.id === id);
+      if (!c) return;
+
+      document.getElementById('modal-name').innerText = c.nameDub;
+      document.getElementById('modal-jp').innerText = c.nameJp;
+      document.getElementById('modal-role').innerText = c.role + " (" + c.episodes + ")";
+      document.getElementById('modal-seiyu').innerText = c.seiyu;
+      document.getElementById('modal-voice').innerText = c.voiceType;
+      document.getElementById('modal-relations').innerText = c.relations;
+      document.getElementById('modal-notes').innerText = c.directorNotes;
+      document.getElementById('modal-arc').innerText = c.dramaticArc;
+      document.getElementById('modal-provenance').innerText = "Documentación Oficial: " + c.provenance;
+
+      const badge = document.getElementById('modal-badge');
+      badge.innerText = c.factionLabel;
+      badge.className = "faction-badge " + getFactionBadgeClass(c.faction);
+
+      const modalImg = document.getElementById('modal-img');
+      const modalFallback = document.getElementById('modal-fallback');
+      const fallbackKanji = document.getElementById('modal-fallback-kanji');
+
+      fallbackKanji.innerText = c.kanjiLead;
+      modalImg.style.display = 'block';
+      modalFallback.style.display = 'none';
+      modalImg.style.objectPosition = c.imagePosition || 'center 20%';
+
+      modalImg.setAttribute('data-try-idx', '0');
+      modalImg.onerror = () => handleImageFallback(modalImg, c.id);
+      modalImg.src = localAssetCache[c.id] || `fotos/${encodeURIComponent(c.fileNames[0])}`;
+
+      document.getElementById('char-modal').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('char-modal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    function showTab(tab) {
+      document.getElementById('view-grid').style.display = tab === 'grid' ? 'block' : 'none';
+      document.getElementById('view-matrix').style.display = tab === 'matrix' ? 'block' : 'none';
+      document.getElementById('view-guide').style.display = tab === 'guide' ? 'block' : 'none';
+
+      document.getElementById('tab-btn-grid').className = tab === 'grid' ? 'btn active' : 'btn';
+      document.getElementById('tab-btn-matrix').className = tab === 'matrix' ? 'btn active' : 'btn';
+      document.getElementById('tab-btn-guide').className = tab === 'guide' ? 'btn active' : 'btn';
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Soporte nativo para arrastrar fotos encima del navegador
+    window.addEventListener('dragover', (e) => { e.preventDefault(); });
+    window.addEventListener('drop', (e) => {
+      e.preventDefault();
+      if (e.dataTransfer && e.dataTransfer.files) {
+        handleFileSelect(e.dataTransfer.files);
+      }
+    });
+
+    window.onload = function() {
+      updateCounts();
+      renderGrid();
+      renderMatrix();
+    };
+  
+    // Android native integration
+    function shareApp() {
+      const text = 'TŌSHŌ DAIMOS — Biblia Oficial de Doblaje. Edición Cuba Offline.';
+      if (window.AndroidApp && typeof AndroidApp.shareText === 'function') {
+        AndroidApp.shareText(text);
+      } else if (navigator.share) {
+        navigator.share({ title: 'TŌSHŌ DAIMOS — Biblia de Doblaje', text });
+      } else {
+        showToast('La función de compartir no está disponible en este dispositivo.');
+      }
+    }
+    if (window.AndroidApp) {
+      document.documentElement.classList.add('android-app');
+      const status = document.getElementById('sync-status');
+      if (status) status.textContent = 'Aplicación instalada • contenido integrado • funciona sin internet.';
+    }
+</script>
+
+</body></html>
